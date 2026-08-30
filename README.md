@@ -33,6 +33,43 @@ Deux niveaux de positionnement :
    page pilier de cet argument ; `sites-web-ia/` et `saas-sur-mesure/` en sont
    les applications concrètes et pointent toutes deux vers elle.
 
+## Changer les couleurs
+
+Toute la palette découle de **huit variables** groupées en haut de
+`assets/site.css`, sous le bandeau « LES SEULES VALEURS À CHANGER ». Le reste
+en dérive par `color-mix()` : gris de texte, filets, teintes de survol,
+échelle d'opacité sur fond sombre.
+
+```css
+--brand-ink     /* sombre : texte, aplats, pied de page */
+--brand-accent  /* accent : boutons, liens, pastilles   */
+--brand-second  /* secondaire : tuile de chiffre        */
+--brand-tint    /* teinte claire : cartes               */
+--brand-tint-2  /* teinte très claire : sections        */
+--brand-page    /* fond de page                         */
+--brand-light   /* texte sur fond sombre                */
+--brand-shade   /* voile posé sur les photos            */
+```
+
+Ne modifiez pas les variables situées sous « dérivés » : elles sont
+recalculées à partir des huit précédentes.
+
+**Après tout changement de palette, lancez la vérification de contraste.**
+Une teinte plus claire casse silencieusement la lisibilité des petits textes :
+
+```
+npx http-server . -p 8099 -s &
+node tools/contraste.js
+```
+
+Le script parcourt les sept pages, composite les textes semi-transparents sur
+leur fond réel et signale tout rapport inférieur au niveau AA (4,5 pour le
+texte courant, 3 pour le texte large). Il sort en code d'erreur s'il trouve
+quelque chose, ce qui permet de le brancher sur une intégration continue.
+
+Une exception est volontairement ignorée : le blanc sur l'accent, qui plafonne
+vers 2,7. C'est le parti pris de la référence, assumé.
+
 ## Données structurées
 
 Le JSON-LD forme un seul graphe à l'échelle du site, relié par `@id` :
