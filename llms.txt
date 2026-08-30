@@ -13,10 +13,10 @@ faut décider, vérifier et couper.
 
 ## Ce que je fais
 
-- [Agents IA branchés sur vos outils métier](https://paperstrip.github.io/website/) : tri documentaire automatisé, réponses client assistées, ponts entre boutique en ligne et outil de gestion. L'intelligence arrive dans le logiciel que les équipes ouvrent déjà, sans nouvel écran à apprendre.
+- [Agents IA branchés sur vos outils métier](https://paperstrip.github.io/website/) : tri documentaire automatisé, réponses client assistées, extensions de navigateur qui ajoutent une fonction à une interface existante, croisement de données et tableau de bord de pilotage, ponts entre boutique en ligne et outil de gestion. La logique agentique est livrée en API et branchée par l'équipe ou l'intégrateur déjà en place. L'intelligence arrive le plus souvent dans le logiciel que les équipes ouvrent déjà ; quand un écran supplémentaire est nécessaire, il est annoncé au départ.
 - [Sites web sur mesure conçus avec l'IA](https://paperstrip.github.io/website/sites-web-ia/) : statiques ou WordPress. Rendu non générique, structure HTML sémantique, Core Web Vitals tenus, référencement naturel et GEO travaillés.
 - [Logiciels métier sur mesure](https://paperstrip.github.io/website/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
-- [Sous-traitance technique pour agences](https://paperstrip.github.io/website/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, code cédé et documenté, clause de non-sollicitation acceptée.
+- [Sous-traitance technique pour agences](https://paperstrip.github.io/website/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/website/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
 - [Contact](https://paperstrip.github.io/website/contact/) : arnaudherr@gmail.com, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement.
 
