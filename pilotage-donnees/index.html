@@ -28,6 +28,22 @@
 
 <link rel="preload" href="../assets/fonts/sg-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/site.css">
+<style>
+  /* ==================================================================
+     ACCENT PROPRE À CETTE PAGE
+     Le produit décrit ici a sa propre identité. Seul l'accent change :
+     l'encre, les fonds et la typographie restent ceux du site, pour
+     qu'on reste chez le même prestataire en changeant de page.
+     Remplacer ces trois valeurs par celles de la plateforme.
+     Vérifier ensuite : node tools/contraste.js
+     ================================================================== */
+  :root{
+    --brand-accent:#1F8FA8;   /* accent : boutons, liens, pastilles */
+    --brand-second:#B4DBE4;   /* secondaire : fonds d'appui */
+    --brand-tint:#E7F0F2;     /* teinte claire : cartes */
+    --brand-tint-2:#F3F8F9;   /* teinte très claire : fonds de section */
+  }
+</style>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
