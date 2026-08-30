@@ -1,0 +1,14 @@
+Déposez ici les images brutes, telles qu'elles sortent du générateur.
+
+Le nom du fichier doit correspondre à la table de tools/images.js, quelle que
+soit l'extension : hero, constat-equipe, cas-tri-documentaire, cas-reponses,
+cas-extensions, cas-pilotage, cas-ponts, bento-code, bento-atelier, manifeste,
+terrain-distribution, terrain-relation, terrain-administratif, cta, portrait,
+og.
+
+Puis :
+    NODE_PATH=/opt/node22/lib/node_modules node tools/images.js
+
+Les versions optimisées sont écrites dans assets/img/. Ce sont elles que le
+site sert. Les fichiers bruts restent ici pour pouvoir tout regénérer sans
+repasser par le générateur.

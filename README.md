@@ -49,6 +49,31 @@ générateur `nav.py` traite ce bloc à part, dans `APART`.
 fois sur l'accueil. C'est la page qui consolide l'entité aux yeux des moteurs :
 un nom, une zone, un métier, des partenaires nommés.
 
+## Images
+
+Les images servies par le site vivent dans `assets/img/`. Elles sont produites
+à partir des fichiers bruts déposés dans `assets/img-src/`, qui restent dans le
+dépôt pour pouvoir tout regénérer sans repasser par le générateur d'images.
+
+```
+NODE_PATH=/opt/node22/lib/node_modules node tools/images.js
+NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --jpeg
+NODE_PATH=/opt/node22/lib/node_modules node tools/images.js --qualite 85
+```
+
+Aucun utilitaire d'image n'est installé sur la machine, l'outil passe donc par
+le moteur de rendu de Chromium : recadrage centré au rapport attendu, réduction
+par paliers pour éviter les escaliers, réencodage en WebP. La table des noms et
+des dimensions est en tête de `tools/images.js`, et elle doit rester alignée
+sur les attributs `width` et `height` du HTML, qui réservent la place et
+évitent le décalage au chargement.
+
+Un fichier dont le nom n'est pas dans la table est ignoré et signalé.
+
+Les fichiers bruts restent dans l'historique git une fois commités. Si le poids
+du dépôt devient gênant, c'est `assets/img-src/` qu'il faut sortir, pas
+`assets/img/`.
+
 ## Changer les couleurs
 
 Toute la palette découle de **huit variables** groupées en haut de
