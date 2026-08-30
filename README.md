@@ -24,14 +24,17 @@ assets/fonts/         Schibsted Grotesk (variable, woff2, latin + latin-ext)
 
 ## Architecture éditoriale
 
-Deux niveaux de positionnement :
+Deux niveaux de positionnement.
 
-1. **L'accueil** porte l'offre principale — des agents IA qui vivent dans
-   l'ERP, le CRM ou la boutique, branchés sur la donnée réelle.
-2. **Les trois pages internes** portent le second niveau : une production
-   assistée par IA mais tenue par un professionnel. `ia-maitrisee/` est la
-   page pilier de cet argument ; `sites-web-ia/` et `saas-sur-mesure/` en sont
-   les applications concrètes et pointent toutes deux vers elle.
+1. **L'accueil** porte l'offre principale : la logique agentique construite
+   puis livrée en API, branchée sur l'ERP, le CRM ou la boutique par l'équipe
+   ou l'intégrateur déjà en place. Le site ne prétend pas faire l'intégration
+   lui-même, c'était faux et c'est corrigé.
+2. **Les quatre pages d'offre** déclinent ce principe : `pilotage-donnees/`
+   pour le croisement de données et le tableau de bord, `sites-web-ia/`,
+   `saas-sur-mesure/` et `sous-traitance/`. `ia-maitrisee/` n'est pas une
+   offre mais la méthode qui vaut pour toutes, d'où son type `Article` et non
+   `Service`, et les liens qui pointent vers elle depuis les pages d'offre.
 
 ## Changer les couleurs
 
@@ -90,6 +93,18 @@ quelque chose, ce qui permet de le brancher sur une intégration continue.
 
 Une exception est volontairement ignorée : le blanc sur l'accent, qui plafonne
 vers 2,7. C'est le parti pris de la référence, assumé.
+
+### Accent propre à une page
+
+Une page peut porter son propre accent sans quitter l'identité du site.
+`pilotage-donnees/index.html` le fait dans un bloc `<style>` en tête de page :
+seuls `--brand-accent`, `--brand-second`, `--brand-tint` et `--brand-tint-2`
+sont redéfinis. L'encre, les fonds sombres et la typographie ne bougent pas,
+donc la navigation, le pied de page et le hero restent ceux du reste du site.
+
+Toutes les valeurs dérivées suivent automatiquement, y compris la couleur de
+lien `--coral-t`. Relancer `node tools/contraste.js` après changement : le
+script parcourt toutes les pages et voit cet accent comme les autres.
 
 ## Données structurées
 
