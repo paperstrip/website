@@ -73,6 +73,9 @@
   @media(min-width:1929px){:root{--m:calc((100vw - 1728px) / 2)}}
 
   *{box-sizing:border-box;margin:0;padding:0}
+  /* une regle d'auteur comme .form{display:grid} l'emporte sur le [hidden]
+     de la feuille par defaut du navigateur : il faut le reaffirmer ici */
+  [hidden]{display:none!important}
   html{scroll-behavior:smooth;background:#fff;overflow-x:hidden;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
 
   body{
@@ -596,3 +599,32 @@
   }
   .foot-nav a{font-size:var(--t-sm);color:var(--ink-70);transition:color .25s var(--ease)}
   .foot-nav a:hover{color:var(--coral)}
+
+  /* ---------- CONTACT : téléphone et formulaire ---------- */
+  .hero-contacts{display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap}
+  .hero-contacts .btn{width:auto;flex:1 1 260px}
+  .hero-contacts .phone{
+    font-size:var(--t-lead);color:#fff;white-space:nowrap;
+    border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:2px;
+    transition:border-color .25s var(--ease),color .25s var(--ease);
+  }
+  .hero-contacts .phone:hover{color:var(--coral);border-color:var(--coral)}
+
+  .form{margin-top:clamp(28px,4vw,40px);display:grid;gap:18px;max-width:620px}
+  .form .field{display:grid;gap:7px}
+  .form label{font-size:var(--t-sm);font-weight:400;color:var(--ink)}
+  .form label .opt{color:var(--ink-45)}
+  .form input,.form textarea{
+    font:inherit;font-size:var(--t-body);color:var(--ink);
+    background:#fff;border:1px solid var(--line-2);border-radius:var(--r-sm);
+    padding:14px 16px;width:100%;
+    transition:border-color .25s var(--ease);
+  }
+  .form textarea{min-height:150px;resize:vertical}
+  .form input:focus,.form textarea:focus{border-color:var(--coral);outline:none}
+  .form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .form .note{font-size:var(--t-sm);color:var(--ink-45);max-width:52ch}
+  .form button{align-self:start}
+  .form-fallback{margin-top:clamp(28px,4vw,40px)}
+  .lnk{border-bottom:1px solid var(--line-2);transition:color .25s var(--ease),border-color .25s var(--ease)}
+  .lnk:hover{color:var(--coral-t);border-color:var(--coral-t)}

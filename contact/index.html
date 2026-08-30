@@ -140,6 +140,10 @@
             <a href="mailto:arnaudherr@gmail.com">arnaudherr@gmail.com</a>
           </div>
           <div>
+            <p class="lbl">Appeler</p>
+            <a href="tel:+32477672928">0477 67 29 28</a>
+          </div>
+          <div>
             <p class="lbl">Suivre</p>
             <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
           </div>
@@ -166,8 +170,9 @@
       <h1 id="h1" data-rv>Racontez-moi la tâche qui revient <em>tous les jours</em>.</h1>
       <p class="lead" data-rv>Je vous dis si elle est automatisable, par quel bout, et ce que ça suppose comme
       travail. Il arrive que la réponse soit non. Le dire fait aussi partie du métier.</p>
-      <p data-rv>
+      <p class="hero-contacts" data-rv>
         <a href="mailto:arnaudherr@gmail.com" class="btn btn-block">arnaudherr@gmail.com</a>
+        <a href="tel:+32477672928" class="phone">0477 67 29 28</a>
       </p>
     </div>
   </section>
@@ -184,6 +189,47 @@
         <li><b>Le volume</b> : combien de dossiers, de documents ou de demandes par semaine</li>
         <li><b>Ce qui a déjà été tenté</b> : surtout ce qui a échoué, c'est en général le plus instructif</li>
       </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="form-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="form-title" data-rv>Ou écrivez-moi directement</h2>
+      <p class="lead" data-rv>Quatre champs. Je réponds sous deux jours ouvrables.</p>
+
+      <form class="form" id="contactForm" data-rv
+            action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID" method="POST" hidden>
+        <div class="field">
+          <label for="cf-nom">Votre nom</label>
+          <input id="cf-nom" name="nom" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cf-mail">Votre adresse e-mail</label>
+          <input id="cf-mail" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="cf-outils">Vos outils <span class="opt">(facultatif)</span></label>
+          <input id="cf-outils" name="outils" type="text"
+                 placeholder="Odoo, HubSpot, WooCommerce, un tableur...">
+        </div>
+        <div class="field">
+          <label for="cf-msg">La tâche qui revient</label>
+          <textarea id="cf-msg" name="message" required
+                    placeholder="Décrivez-la telle qu'elle se passe vraiment, avec le volume par semaine."></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="cf-site">Ne remplissez pas ce champ</label>
+          <input id="cf-site" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-block">Envoyer</button>
+        <p class="note">Vos coordonnées servent uniquement à vous répondre. Elles ne sont ni revendues, ni
+        versées à une liste de diffusion.</p>
+      </form>
+
+      <div class="form-fallback" id="formFallback" data-rv>
+        <p class="lead">Par mail à <a href="mailto:arnaudherr@gmail.com" class="lnk">arnaudherr@gmail.com</a>
+        ou par téléphone au <a href="tel:+32477672928" class="lnk">0477 67 29 28</a>.</p>
+      </div>
     </div>
   </section>
 
@@ -244,6 +290,17 @@
 </footer>
 
 <script src="../assets/site.js" defer></script>
+<script>
+(function(){
+  /* Tant que l'action pointe sur l'identifiant d'exemple, le formulaire
+     enverrait dans le vide : on affiche le contact direct à la place. */
+  var f=document.getElementById('contactForm'), fb=document.getElementById('formFallback');
+  if(!f||!fb) return;
+  var pret = f.getAttribute('action').indexOf('REMPLACER_PAR_VOTRE_ID') === -1;
+  f.hidden = !pret;
+  fb.hidden = pret;
+})();
+</script>
 
 </body>
 </html>
