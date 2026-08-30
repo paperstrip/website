@@ -629,3 +629,51 @@
   .lnk{border-bottom:1px solid var(--line-2);transition:color .25s var(--ease),border-color .25s var(--ease)}
   .lnk:hover{color:var(--coral-t);border-color:var(--coral-t)}
   @media(min-width:900px){.offers{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- PIED DE PAGE ---------- */
+  .site-footer{
+    background:var(--ink);color:#fff;
+    /* la derniere section apporte deja son padding-bas : pas de marge en plus */
+    padding-block:clamp(56px,8vw,120px) 0;
+  }
+  .foot-top{
+    display:flex;gap:clamp(36px,6vw,80px);flex-wrap:wrap;justify-content:space-between;
+    padding-bottom:clamp(44px,6vw,90px);
+  }
+  .foot-brand{flex:1 1 260px;max-width:340px}
+  .foot-logo{display:inline-block;font-size:1.375rem;font-weight:700;letter-spacing:-.04em;color:#fff}
+  .foot-logo span{color:var(--coral)}
+  .foot-brand p{margin-top:18px;color:rgba(255,255,255,.6);font-size:var(--t-sm);line-height:1.5}
+  .foot-contact{margin-top:26px;display:grid;gap:12px;justify-items:start}
+  .foot-contact a{
+    color:rgba(255,255,255,.88);font-size:var(--t-body);
+    border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px;
+    transition:color .25s var(--ease),border-color .25s var(--ease);
+  }
+  .foot-contact a:hover{color:var(--coral);border-color:var(--coral)}
+  .foot-cols{display:flex;gap:clamp(32px,5vw,80px);flex-wrap:wrap}
+  .foot-col{min-width:150px}
+  .foot-lbl{
+    font-size:var(--t-sm);font-weight:400;line-height:1;
+    color:rgba(255,255,255,.5);margin-bottom:20px;
+  }
+  .foot-col a{
+    display:inline-block;padding-block:7px;color:rgba(255,255,255,.88);font-size:var(--t-sm);
+    transition:color .25s var(--ease);
+  }
+  .foot-col a:hover{color:var(--coral)}
+  .foot-end{
+    display:flex;justify-content:space-between;align-items:center;gap:14px 28px;flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,.2);
+    padding-block:clamp(26px,3vw,38px);
+    font-size:var(--t-sm);color:rgba(255,255,255,.55);
+  }
+  .foot-end a{color:rgba(255,255,255,.78);transition:color .25s var(--ease)}
+  .foot-end a:hover{color:var(--coral)}
+  .foot-end .r{display:flex;gap:22px;flex-wrap:wrap}
+
+  /* l'appel à l'action final occupait une moitié d'écran vide en desktop */
+  @media(min-width:1024px){
+    .cta{aspect-ratio:2.1;min-height:0}
+    .cta-in{max-width:min(62%,860px)}
+  }
