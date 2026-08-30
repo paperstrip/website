@@ -21,6 +21,7 @@ PAGES = [
     ("saas-sur-mesure/", "saas-sur-mesure/index.html"),
     ("sous-traitance/",  "sous-traitance/index.html"),
     ("ia-maitrisee/",    "ia-maitrisee/index.html"),
+    ("a-propos/",        "a-propos/index.html"),
     ("contact/",         "contact/index.html"),
     ("mentions-legales/","mentions-legales/index.html"),
 ]

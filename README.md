@@ -36,6 +36,15 @@ Deux niveaux de positionnement.
    offre mais la méthode qui vaut pour toutes, d'où son type `Article` et non
    `Service`, et les liens qui pointent vers elle depuis les pages d'offre.
 
+Trois niveaux dans la navigation. La barre du haut ne porte que les offres.
+Le mega menu porte tout, dans l'ordre de la définition unique de `nav.py`.
+`pilotage-donnees/` et `a-propos/` sont volontairement en dessous des offres :
+elles vivent dans le mega menu et le pied de page, pas dans la barre.
+
+`a-propos/` est balisée `AboutPage` et pointe vers `#person`, défini une seule
+fois sur l'accueil. C'est la page qui consolide l'entité aux yeux des moteurs :
+un nom, une zone, un métier, des partenaires nommés.
+
 ## Changer les couleurs
 
 Toute la palette découle de **huit variables** groupées en haut de
