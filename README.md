@@ -9,9 +9,10 @@ sites-web-ia/         sites statiques et WordPress conçus avec l'IA
 saas-sur-mesure/      applications métier et SaaS sur mesure
 ia-maitrisee/         page pilier : sortir du générique, performance, SEO et GEO
 contact/              contact
+mentions-legales/     éditeur, hébergement, données personnelles
 404.html              page d'erreur (autonome, styles en ligne)
 robots.txt            indexation + déclaration du sitemap
-sitemap.xml           généré, ne pas éditer à la main
+sitemap.xml           généré, ne pas éditer à la main (6 URL)
 llms.txt              résumé du site pour les moteurs génératifs
 tools/sitemap.py      régénère sitemap.xml depuis les dates git
 assets/site.css       styles partagés par toutes les pages
@@ -44,6 +45,17 @@ Le JSON-LD forme un seul graphe à l'échelle du site, relié par `@id` :
 
 En ajoutant une page, référencez `#person` par identifiant. Ne recopiez jamais
 le nœud Person.
+
+## Mentions légales
+
+La page est complète pour la situation actuelle : personne physique, activité
+en cours de lancement. Il manquera le **numéro d'entreprise BCE** dès
+l'inscription. Un paragraphe l'annonce explicitement plutôt que de laisser un
+vide.
+
+Le site n'utilise aucun cookie ni outil de mesure d'audience, donc aucun
+bandeau de consentement n'est nécessaire. **Si un jour vous ajoutez une mesure
+d'audience, cette page devient fausse et un bandeau devient obligatoire.**
 
 ## Formulaire de contact
 

@@ -20,6 +20,7 @@ PAGES = [
     ("saas-sur-mesure/", "saas-sur-mesure/index.html"),
     ("ia-maitrisee/",    "ia-maitrisee/index.html"),
     ("contact/",         "contact/index.html"),
+    ("mentions-legales/","mentions-legales/index.html"),
 ]
 
 

@@ -19,6 +19,10 @@ faut décider, vérifier et couper.
 - [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/website/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
 - [Contact](https://paperstrip.github.io/website/contact/) : arnaudherr@gmail.com, 0477 67 29 28 (+32 477 67 29 28). Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement.
 
+## Cadre
+
+- [Mentions légales](https://paperstrip.github.io/website/mentions-legales/) : éditeur, hébergement, données personnelles. Le site n'utilise aucun cookie, aucun traceur et aucun outil de mesure d'audience.
+
 ## Comment je travaille
 
 1. Une demi-journée sur place, à côté des gens qui font le travail. On isole deux ou trois gestes répétitifs et on met un chiffre dessus.
