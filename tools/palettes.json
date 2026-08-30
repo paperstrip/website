@@ -11,64 +11,76 @@
     "light": "#FFFFFF",
     "shade": "#243749"
   },
-  "ardoise": {
-    "nom": "Ardoise",
-    "note": "Bleu ardoise froid et orange brule. Plus sobre, lecture plus technique.",
-    "ink": "#14202B",
-    "accent": "#E8663F",
-    "second": "#A8C0D6",
-    "tint": "#FBF1EC",
-    "tint2": "#F5F8FA",
+  "noir": {
+    "nom": "Noir",
+    "note": "Noir neutre sans dominante, orange pur. Editorial, franc, aucun bleu.",
+    "ink": "#111113",
+    "accent": "#F0562A",
+    "second": "#D6D3CC",
+    "tint": "#F2F0EC",
+    "tint2": "#F8F7F4",
     "page": "#FFFFFF",
     "light": "#FFFFFF",
-    "shade": "#1E2B36"
+    "shade": "#1A1A1D"
   },
-  "foret": {
-    "nom": "Foret",
-    "note": "Vert profond et terracotta. Chaleureux, moins vu dans le secteur.",
-    "ink": "#12291F",
-    "accent": "#D9744A",
-    "second": "#A9C3A5",
-    "tint": "#F6F1E9",
-    "tint2": "#F3F7F2",
-    "page": "#FFFFFF",
+  "craie": {
+    "nom": "Craie",
+    "note": "Fonds creme, encre chaude presque noire, accent vert sapin. Le contraire du schema actuel : neutre chaud, accent froid.",
+    "ink": "#1B1B19",
+    "accent": "#3E9268",
+    "second": "#C4D3C6",
+    "tint": "#EEEBE3",
+    "tint2": "#F6F3EC",
+    "page": "#FBFAF6",
     "light": "#FFFFFF",
-    "shade": "#1B3227"
+    "shade": "#232320"
   },
-  "prune": {
-    "nom": "Prune",
-    "note": "Prune sombre et rose profond. Plus creatif, moins corporate.",
-    "ink": "#2A1230",
-    "accent": "#E0637C",
-    "second": "#C9AEDA",
-    "tint": "#FCF0F3",
-    "tint2": "#FBF4F8",
+  "acier": {
+    "nom": "Acier",
+    "note": "Gris acier plutot que noir, accent teal profond. Froid, technique, sans orange.",
+    "ink": "#1B2128",
+    "accent": "#12A094",
+    "second": "#B8C4CC",
+    "tint": "#EDF0F2",
+    "tint2": "#F6F8F9",
     "page": "#FFFFFF",
     "light": "#FFFFFF",
-    "shade": "#33203A"
+    "shade": "#2A323A"
   },
-  "encre": {
-    "nom": "Encre",
-    "note": "Bleu nuit et bleu vif, camaieu monochrome. Le plus classique des six.",
-    "ink": "#0F1729",
-    "accent": "#5B8CEC",
-    "second": "#9FC0F5",
-    "tint": "#EEF3FC",
-    "tint2": "#F5F8FD",
-    "page": "#FFFFFF",
+  "brique": {
+    "nom": "Brique",
+    "note": "Monochrome chaud, ton sur ton. Brun rouge sombre, accent brique, fonds legerement creme.",
+    "ink": "#2E1A16",
+    "accent": "#D66B4C",
+    "second": "#DFBFA8",
+    "tint": "#F5EBE4",
+    "tint2": "#FBF5F0",
+    "page": "#FFFDFA",
     "light": "#FFFFFF",
-    "shade": "#16233B"
+    "shade": "#3A211B"
   },
-  "sable": {
-    "nom": "Sable",
-    "note": "Brun sombre et ocre. Fonds cremes, rendu imprime.",
-    "ink": "#241F18",
-    "accent": "#DB7A42",
-    "second": "#D9C9A8",
-    "tint": "#F7F1E6",
-    "tint2": "#FAF6EF",
+  "violet": {
+    "nom": "Violet",
+    "note": "Registre logiciel : encre violet sombre, accent violet vif. Sans une trace d'orange.",
+    "ink": "#1D1533",
+    "accent": "#8B6DEF",
+    "second": "#C7BBF2",
+    "tint": "#F0ECFA",
+    "tint2": "#F7F5FD",
     "page": "#FFFFFF",
     "light": "#FFFFFF",
-    "shade": "#2E2A22"
+    "shade": "#271C40"
+  },
+  "rouge": {
+    "nom": "Rouge",
+    "note": "Noir et rouge franc, accent utilise avec parcimonie. Le plus affirme des six.",
+    "ink": "#151515",
+    "accent": "#EC4A57",
+    "second": "#E6C7C7",
+    "tint": "#F4EDED",
+    "tint2": "#FAF6F6",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#1E1E1E"
   }
 }
