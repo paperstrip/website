@@ -97,6 +97,7 @@
           <a href="../">Agents métier</a>
           <a href="../sites-web-ia/">Sites web</a>
           <a href="../saas-sur-mesure/">SaaS sur mesure</a>
+      <a href="../sous-traitance/">Sous-traitance</a>
           <a href="../ia-maitrisee/">IA maîtrisée</a>
         </nav>
         <a href="../contact/" class="btn btn-sm">Parlons-en</a>
@@ -123,13 +124,18 @@
           <span class="t">SaaS sur mesure</span>
           <span class="d">Un outil taillé sur votre processus, construit en semaines.</span>
         </a>
-        <a href="../ia-maitrisee/" class="mega-anim">
+        <a href="../sous-traitance/" class="mega-anim">
           <span class="i">04</span>
+          <span class="t">Sous-traitance</span>
+          <span class="d">Renfort technique en marque blanche pour agences et sociétés de services.</span>
+        </a>
+        <a href="../ia-maitrisee/" class="mega-anim">
+          <span class="i">05</span>
           <span class="t">IA maîtrisée</span>
           <span class="d">Pourquoi un livrable généré se reconnaît, et comment on enlève ça.</span>
         </a>
         <a href="../contact/" class="mega-anim" aria-current="page">
-          <span class="i">05</span>
+          <span class="i">06</span>
           <span class="t">Parlons-en</span>
           <span class="d">Trente minutes au téléphone, une réponse franche, sans engagement.</span>
         </a>
@@ -198,7 +204,7 @@
       <p class="lead" data-rv>Quatre champs. Je réponds sous deux jours ouvrables.</p>
 
       <form class="form" id="contactForm" data-rv
-            action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID" method="POST" hidden>
+            action="https://formspree.io/f/mrpgbwey" method="POST">
         <div class="field">
           <label for="cf-nom">Votre nom</label>
           <input id="cf-nom" name="nom" type="text" autocomplete="name" required>
@@ -226,10 +232,9 @@
         versées à une liste de diffusion.</p>
       </form>
 
-      <div class="form-fallback" id="formFallback" data-rv>
-        <p class="lead">Par mail à <a href="mailto:arnaudherr@gmail.com" class="lnk">arnaudherr@gmail.com</a>
-        ou par téléphone au <a href="tel:+32477672928" class="lnk">0477 67 29 28</a>.</p>
-      </div>
+      <p class="form-fallback lead" data-rv>Si vous préférez, par mail à
+      <a href="mailto:arnaudherr@gmail.com" class="lnk">arnaudherr@gmail.com</a> ou par téléphone au
+      <a href="tel:+32477672928" class="lnk">0477 67 29 28</a>.</p>
     </div>
   </section>
 
@@ -291,17 +296,7 @@
 </footer>
 
 <script src="../assets/site.js" defer></script>
-<script>
-(function(){
-  /* Tant que l'action pointe sur l'identifiant d'exemple, le formulaire
-     enverrait dans le vide : on affiche le contact direct à la place. */
-  var f=document.getElementById('contactForm'), fb=document.getElementById('formFallback');
-  if(!f||!fb) return;
-  var pret = f.getAttribute('action').indexOf('REMPLACER_PAR_VOTRE_ID') === -1;
-  f.hidden = !pret;
-  fb.hidden = pret;
-})();
-</script>
+
 
 </body>
 </html>

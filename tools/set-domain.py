@@ -28,7 +28,8 @@ Search Console de l'ancienne propriete permet de demander leur retrait.
 import io, os, re, sys
 
 CIBLES = ["index.html", "sites-web-ia/index.html", "saas-sur-mesure/index.html",
-          "ia-maitrisee/index.html", "contact/index.html",
+          "ia-maitrisee/index.html", "sous-traitance/index.html",
+          "contact/index.html", "mentions-legales/index.html",
           "sitemap.xml", "robots.txt", "llms.txt", "README.md", "tools/sitemap.py"]
 
 

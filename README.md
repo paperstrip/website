@@ -59,21 +59,14 @@ d'audience, cette page devient fausse et un bandeau devient obligatoire.**
 
 ## Formulaire de contact
 
-Le formulaire de `contact/index.html` est prêt mais **inactif**. Son attribut
-`action` pointe encore sur `REMPLACER_PAR_VOTRE_ID`. Tant que c'est le cas, un
-script en fin de page le masque et affiche le mail et le téléphone à la place :
-aucun visiteur ne remplit un formulaire qui n'envoie rien.
+Le formulaire de `contact/index.html` poste vers Formspree
+(`https://formspree.io/f/mrpgbwey`). Il fonctionne sans JavaScript, en POST
+natif. Le champ `_gotcha` est un piège à robots : invisible pour l'utilisateur,
+rempli par les robots, ce qui permet au service de rejeter l'envoi.
 
-Pour l'activer, sans serveur :
-
-1. Créer un compte sur Formspree (ou Tally, Web3Forms, Basin), gratuit jusqu'à
-   quelques dizaines d'envois par mois.
-2. Créer un formulaire, récupérer l'identifiant du point de collecte.
-3. Remplacer `REMPLACER_PAR_VOTRE_ID` dans l'attribut `action`.
-
-Le formulaire fonctionne alors sans JavaScript, en POST natif. Le champ
-`_gotcha` est un piège à robots : invisible pour l'utilisateur, rempli par les
-robots, ce qui permet au service de rejeter l'envoi.
+Le premier envoi demande une confirmation par mail côté Formspree. Le plan
+gratuit est limité à quelques dizaines d'envois par mois ; au-delà, les
+messages sont retenus jusqu'au mois suivant.
 
 ## Sitemap
 
