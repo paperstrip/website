@@ -664,7 +664,6 @@
   .form-fallback{margin-top:clamp(28px,4vw,40px)}
   .lnk{border-bottom:1px solid var(--line-2);transition:color .25s var(--ease),border-color .25s var(--ease)}
   .lnk:hover{color:var(--coral-t);border-color:var(--coral-t)}
-  @media(min-width:900px){.offers{grid-template-columns:repeat(2,1fr)}}
 
   /* ---------- PIED DE PAGE ---------- */
   .site-footer{
