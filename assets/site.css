@@ -21,15 +21,15 @@
        Tout le reste en découle. Après modification, relancer la
        vérification de contraste : tools/contraste.js
        ================================================================== */
-    --brand-ink:#1B1B19;      /* sombre : texte, aplats, pied de page */
-    --brand-accent:#3E9268;   /* accent : boutons, liens, pastilles */
-    --brand-second:#C4D3C6;   /* secondaire : tuile de chiffre */
-    --brand-tint:#EEEBE3;     /* teinte claire : cartes */
-    --brand-tint-2:#F6F3EC;   /* teinte très claire : fonds de section */
-    --brand-page:#FBFAF6;     /* fond de page */
+    --brand-ink:#17161C;      /* sombre : texte, aplats, pied de page */
+    --brand-accent:#9B87E0;   /* accent : boutons, liens, pastilles */
+    --brand-second:#DAD1F2;   /* secondaire : tuile de chiffre */
+    --brand-tint:#EDEBF4;     /* teinte claire : cartes */
+    --brand-tint-2:#F6F5FA;   /* teinte très claire : fonds de section */
+    --brand-page:#FFFFFF;     /* fond de page */
     --brand-light:#FFFFFF;    /* texte et éléments sur fond sombre */
     --brand-on-accent:var(--brand-light); /* texte posé sur l'accent, à passer en sombre si l'accent est clair */
-    --brand-shade:#232320;    /* voile posé sur les photos */
+    --brand-shade:#201F27;    /* voile posé sur les photos */
     /* dégradé du bas de hero, repris tel quel de la référence.
        Remplacer #000 par une autre teinte pour le colorer. */
     --hero-overlay:linear-gradient(to top,#000,#000000fa 9.99%,#000000ec 19.07%,#000000d7 27.44%,#000000bd 35.26%,#0000009f 42.72%,#00000080,#00000060 57.28%,#00000042 64.74%,#00000028 72.56%,#00000013 80.93%,#00000005 90.01%,#0000);
@@ -272,6 +272,34 @@
     border-top:1px solid var(--on-dark-12);
   }
   .mega-nav a:last-child{border-bottom:1px solid var(--on-dark-12)}
+
+  /* Le produit n'est pas une prestation : il sort de la liste numérotée et
+     porte sa propre couleur, celle de la plateforme. */
+  .mega-apart{margin-top:clamp(22px,3vw,32px)}
+  .mega-apart .lbl{
+    display:block;font-size:var(--t-xs);font-weight:400;line-height:1;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-40);
+    margin-bottom:12px;
+  }
+  .mega-apart a{
+    display:block;padding:clamp(15px,2.4vw,22px) 0 0;
+    border-top:1px solid var(--on-dark-20);
+  }
+  .mega-apart .t{
+    display:flex;align-items:center;gap:11px;
+    font-size:clamp(1.5rem,1.05rem + 1.9vw,2.25rem);
+    line-height:1.16;letter-spacing:-.02em;font-weight:600;color:var(--on-dark);
+    transition:color .25s var(--ease);
+  }
+  .mega-apart .t::before{
+    content:'';flex:none;width:11px;height:11px;border-radius:var(--pill);
+    background:#CEF163;
+  }
+  .mega-apart .d{
+    display:block;margin-top:7px;max-width:46ch;
+    font-size:var(--t-sm);line-height:1.45;color:var(--on-dark-55);
+  }
+  .mega-apart a:hover .t{color:#CEF163}
   .mega-nav .i{
     font-size:var(--t-xs);font-weight:700;letter-spacing:.1em;
     color:var(--on-dark-40);font-variant-numeric:tabular-nums;

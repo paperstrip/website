@@ -37,9 +37,13 @@ Deux niveaux de positionnement.
    `Service`, et les liens qui pointent vers elle depuis les pages d'offre.
 
 Trois niveaux dans la navigation. La barre du haut ne porte que les offres.
-Le mega menu porte tout, dans l'ordre de la définition unique de `nav.py`.
-`pilotage-donnees/` et `a-propos/` sont volontairement en dessous des offres :
-elles vivent dans le mega menu et le pied de page, pas dans la barre.
+Le mega menu porte les pages du site, numérotées, dans l'ordre de la
+définition unique de `nav.py`. `a-propos/` y figure sans être dans la barre.
+
+`pilotage-donnees/` en est sorti : c'est un produit, pas une prestation. Il
+occupe un bloc `.mega-apart` sous la liste, avec son propre intitulé « Notre
+produit », sans numéro, et une pastille à la couleur de la plateforme. Le
+générateur `nav.py` traite ce bloc à part, dans `APART`.
 
 `a-propos/` est balisée `AboutPage` et pointe vers `#person`, défini une seule
 fois sur l'accueil. C'est la page qui consolide l'entité aux yeux des moteurs :
