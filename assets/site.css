@@ -255,7 +255,6 @@
     transition:opacity .35s var(--ease),visibility 0s linear 0s;
   }
   .megamenu > .wrap{margin-block:auto}
-  .megamenu .eyebrow{color:var(--on-dark-55)}
 
   .mega-nav{display:grid;margin-top:clamp(18px,3vw,26px)}
   .mega-nav a{
