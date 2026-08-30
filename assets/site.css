@@ -546,6 +546,13 @@
   @media(min-width:1024px){
     [data-rv]{transform:translate3d(0,100px,0) scale(.96)}
   }
+  /* Dans un carrousel horizontal, une translation verticale sur les enfants
+     rend le conteneur défilable en hauteur : overflow-x:auto force overflow-y
+     à auto, et le décalage de 30px devient du défilement vertical parasite
+     qui se déclenche au doigt. Ces cartes se révèlent donc en opacité seule. */
+  @media(max-width:1000px){
+    .rail > [data-rv]{transform:none}
+  }
   [data-rv="img"]{transform:none}
   [data-rv="img"] img{transform:scale(1.05);transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
   [data-rv].in{opacity:1;transform:none}
