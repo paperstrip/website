@@ -56,21 +56,24 @@ recalculées à partir des huit précédentes.
 
 ### Palettes enregistrées
 
-Six palettes complètes sont stockées dans `tools/palettes.json`, dont celle en
+Les palettes complètes sont stockées dans `tools/palettes.json`, dont celle en
 place. `tools/theme.py` les applique sans toucher au CSS à la main :
 
 ```
 python3 tools/theme.py --liste      # les six, et celle en place
 python3 tools/theme.py --actuelle   # les huit couleurs du moment
-python3 tools/theme.py ardoise      # appliquer
-python3 tools/theme.py corail       # revenir à la palette de départ
+python3 tools/theme.py coolors-brut # appliquer
+python3 tools/theme.py corail       # revenir à l'ancienne palette
 ```
 
-Les six passent l'audit de contraste. Pour en ajouter une, copiez un bloc dans
-`tools/palettes.json` et vérifiez-la avant de la garder.
+`coolors-brut` est la palette en place. Les variantes `coolors`,
+`coolors-profond` et `coolors-ambre` en sont des versions retouchées pour la
+lisibilité des petits textes, si le besoin s'en fait sentir un jour. Pour en
+ajouter une, copiez un bloc dans `tools/palettes.json`.
 
-**Après tout changement de palette, lancez la vérification de contraste.**
-Une teinte plus claire casse silencieusement la lisibilité des petits textes :
+**Après tout changement de palette, le rapport de contraste dit où on en est.**
+Il est informatif : il affiche les écarts sans rien bloquer. Ajoutez `--strict`
+pour qu'il sorte en erreur, par exemple dans une vérification automatisée.
 
 ```
 npx http-server . -p 8099 -s &

@@ -1,4 +1,16 @@
 {
+  "coolors-brut": {
+    "nom": "Coolors brute",
+    "note": "La palette Coolors d'Arnaud, telle quelle. Indigo #3D348B en encre, cayenne #F35B04 en accent, bleu ardoise #7678ED en secondaire. Ne passe pas l'audit de contraste, c'est assume.",
+    "ink": "#3D348B",
+    "accent": "#F35B04",
+    "second": "#7678ED",
+    "tint": "#FDF0E8",
+    "tint2": "#FFF6F0",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#2E2769"
+  },
   "corail": {
     "nom": "Corail (actuelle)",
     "note": "Indigo profond et corail. Palette de depart, reprise de la reference.",
