@@ -66,10 +66,13 @@ python3 tools/theme.py coolors-brut # appliquer
 python3 tools/theme.py corail       # revenir à l'ancienne palette
 ```
 
-`coolors-brut` est la palette en place. Les variantes `coolors`,
-`coolors-profond` et `coolors-ambre` en sont des versions retouchées pour la
-lisibilité des petits textes, si le besoin s'en fait sentir un jour. Pour en
-ajouter une, copiez un bloc dans `tools/palettes.json`.
+Trente et une palettes sont enregistrées. `craie` est celle en place. Toutes
+passent l'audit de contraste sauf `coolors-brut`, gardée telle quelle parce
+que c'est la palette d'origine. Pour en ajouter une, copiez un bloc dans
+`tools/palettes.json`.
+
+Un essayeur en ligne permet de manipuler les huit couleurs sur un aperçu du
+site et d'en tirer au hasard : voir le lien partagé en conversation.
 
 **Après tout changement de palette, le rapport de contraste dit où on en est.**
 Il est informatif : il affiche les écarts sans rien bloquer. Ajoutez `--strict`
