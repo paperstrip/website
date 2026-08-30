@@ -1,11 +1,10 @@
 # Arnaud Herr
 
-> Indépendant belge. J'intègre des agents IA dans les outils métier qui tournent
+> Basé en Belgique. J'intègre des agents IA dans les outils métier qui tournent
 > déjà : ERP, CRM, boutique en ligne. Je construis aussi des sites web et des
 > logiciels métier sur mesure, produits avec l'IA puis repris à la main.
 
-Indépendant en personne physique, basé en Belgique. J'interviens en Wallonie
-et à Bruxelles, en français.
+Basé en Belgique, j'interviens en Wallonie et à Bruxelles, en français.
 Huit ans passés à connecter des systèmes qui n'avaient pas prévu de se parler.
 
 Ce qui me distingue : l'IA produit vite, et produit donc vite du médiocre quand
