@@ -30,19 +30,26 @@
 <link rel="stylesheet" href="../assets/site.css">
 <style>
   /* ==================================================================
-     ACCENT PROPRE À CETTE PAGE
-     Le produit décrit ici a sa propre identité. Seul l'accent change :
-     l'encre, les fonds et la typographie restent ceux du site, pour
-     qu'on reste chez le même prestataire en changeant de page.
-     Remplacer ces trois valeurs par celles de la plateforme.
-     Vérifier ensuite : node tools/contraste.js
+     COULEURS DE LA PLATEFORME
+     Relevées sur l'interface : vert #CEF163, fond lavande très clair
+     #FBF9FE, cartes blanches, texte sur l'accent en #1A1B22.
+     L'accent étant clair, le texte posé dessus passe en sombre : c'est
+     le rôle de --brand-on-accent, blanc partout ailleurs sur le site.
+     L'encre, les fonds sombres et la typographie ne changent pas.
+     Vérifier après modification : node tools/contraste.js
      ================================================================== */
   :root{
-    --brand-accent:#1F8FA8;   /* accent : boutons, liens, pastilles */
-    --brand-second:#B4DBE4;   /* secondaire : fonds d'appui */
-    --brand-tint:#E7F0F2;     /* teinte claire : cartes */
-    --brand-tint-2:#F3F8F9;   /* teinte très claire : fonds de section */
+    --brand-accent:#CEF163;      /* accent : boutons, pastilles */
+    --brand-on-accent:#1A1B22;   /* texte posé sur l'accent */
+    --brand-second:#E4F5B4;      /* secondaire : fonds d'appui */
+    --brand-tint:#EFF3E4;        /* teinte claire : cartes */
+    --brand-tint-2:#FBF9FE;      /* teinte très claire : fonds de section */
+    --brand-page:#FBF9FE;        /* fond de page, le lavande de la plateforme */
   }
+  /* Le vert est trop clair pour servir de couleur de texte sur fond clair :
+     il tomberait à 1,6 sur blanc. Les liens prennent la même teinte assombrie,
+     donc ils restent verts et restent lisibles. */
+  :root{--coral-t:#5B7703}
 </style>
 <script type="application/ld+json">
 {

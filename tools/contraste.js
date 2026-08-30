@@ -73,8 +73,11 @@ function lum(c){const [r,g,b]=c.slice(0,3).map(v=>{v/=255;return v<=0.03928?v/12
       const need=large?3:4.5;
       /* Blanc sur l'accent est un parti pris assume, repris de la reference.
          Il plafonne vers 2,7 et serait signale a chaque execution : on le
-         laisse de cote pour que le rapport ne remonte que du nouveau. */
-      if(exception(fg,bg)) continue;
+         laisse de cote pour que le rapport ne remonte que du nouveau.
+         Le plancher a 2 garde la tolerance utile sans couvrir un accent clair
+         sur lequel du blanc serait carrement illisible : c'est arrive avec un
+         vert citron ou le rapport tombait a 1,3. */
+      if(exception(fg,bg) && ratio>=2) continue;
       const cle=x.fg+x.bg+x.size;
       if(ratio<need&&!vus.has(cle)){vus.add(cle);
         echecs.push(`  ${ratio.toFixed(2)} au lieu de ${need} — ${x.size}px "${x.t}" ${x.fg} sur ${x.bg}`);}

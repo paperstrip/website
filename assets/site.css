@@ -28,6 +28,7 @@
     --brand-tint-2:#F6F3EC;   /* teinte très claire : fonds de section */
     --brand-page:#FBFAF6;     /* fond de page */
     --brand-light:#FFFFFF;    /* texte et éléments sur fond sombre */
+    --brand-on-accent:var(--brand-light); /* texte posé sur l'accent, à passer en sombre si l'accent est clair */
     --brand-shade:#232320;    /* voile posé sur les photos */
     /* dégradé du bas de hero, repris tel quel de la référence.
        Remplacer #000 par une autre teinte pour le colorer. */
@@ -66,6 +67,8 @@
 
     /* encre appliquée sur un aplat d'accent */
     --on-accent-88:color-mix(in srgb,var(--brand-ink) 88%,transparent);
+    --on-coral:var(--brand-on-accent);
+    --on-coral-88:color-mix(in srgb,var(--brand-on-accent) 88%,transparent);
 
     /* Rayons : 14px pour les blocs, 22px pour les boutons */
     --r:14px;
@@ -162,7 +165,7 @@
   /* ---------- COMMANDES (aucune ombre, aucun halo) ---------- */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;
-    background:var(--coral);color:var(--on-dark);
+    background:var(--coral);color:var(--on-coral);
     height:54px;padding:0 30px;border-radius:var(--r-btn);
     font-size:15px;font-weight:400;letter-spacing:0;line-height:1;
     border:none;
@@ -187,7 +190,7 @@
     letter-spacing:.1em;text-transform:uppercase;
     transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
   }
-  .tag:hover{background:var(--coral);border-color:var(--coral);color:var(--on-dark)}
+  .tag:hover{background:var(--coral);border-color:var(--coral);color:var(--on-coral)}
 
   /* ---------- EN-TÊTE ---------- */
   .site-header{position:fixed;top:clamp(10px,1.6vw,16px);left:0;right:0;z-index:60}
@@ -432,8 +435,8 @@
     letter-spacing:0;line-height:1.1;margin-bottom:10px;
   }
   .b-coral{background:var(--coral)}
-  .b-coral h3{color:var(--on-dark)}
-  .b-coral p{color:var(--on-dark-88)}
+  .b-coral h3{color:var(--on-coral)}
+  .b-coral p{color:var(--on-coral-88)}
   .b-photo{padding:0;overflow:hidden;position:relative;background:var(--ink)}
   .b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
   .b-photo:hover img{transform:scale(1.04)}
@@ -468,7 +471,7 @@
   .step{background:var(--brand-page);border-radius:var(--r);padding:clamp(24px,2.3vw,30px);border:1px solid var(--line)}
   .sec-soft .step{border-color:transparent}
   .step .n{
-    width:38px;height:38px;border-radius:var(--pill);background:var(--coral);color:var(--on-dark);
+    width:38px;height:38px;border-radius:var(--pill);background:var(--coral);color:var(--on-coral);
     display:flex;align-items:center;justify-content:center;
     font-weight:700;font-size:var(--t-sm);line-height:1;margin-bottom:18px;
   }
@@ -551,7 +554,7 @@
   .card h3{margin-bottom:8px}
   .card p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
   .card .n{
-    width:34px;height:34px;border-radius:var(--pill);background:var(--coral);color:var(--on-dark);
+    width:34px;height:34px;border-radius:var(--pill);background:var(--coral);color:var(--on-coral);
     display:flex;align-items:center;justify-content:center;
     font-weight:700;font-size:var(--t-xs);line-height:1;margin-bottom:16px;
   }
@@ -601,11 +604,11 @@
   /* --- bandeau de rappel --- */
   .band{
     margin-top:clamp(30px,4vw,44px);border-radius:var(--r);
-    background:var(--coral);color:var(--on-dark);padding:clamp(28px,4vw,52px);
+    background:var(--coral);color:var(--on-coral);padding:clamp(28px,4vw,52px);
     display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
   }
-  .band h2{color:var(--on-dark);max-width:20ch;font-size:var(--t-h2)}
-  .band p{color:var(--on-dark-88);font-size:var(--t-sm);margin-top:10px;max-width:46ch}
+  .band h2{color:var(--on-coral);max-width:20ch;font-size:var(--t-h2)}
+  .band p{color:var(--on-coral-88);font-size:var(--t-sm);margin-top:10px;max-width:46ch}
   /* sur fond corail, un bouton corail disparaîtrait */
   .band .btn{background:var(--ink);color:var(--on-dark)}
   .band .btn:hover{background:var(--brand-page);color:var(--ink)}

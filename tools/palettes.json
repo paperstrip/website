@@ -370,5 +370,17 @@
     "page": "#FFFFFF",
     "light": "#FFFFFF",
     "shade": "#191919"
+  },
+  "plateforme": {
+    "nom": "Plateforme",
+    "note": "Les couleurs de la plateforme de pilotage, relevees sur son interface. L'accent etant clair, le texte pose dessus est sombre (voir le bloc en tete de pilotage-donnees/index.html).",
+    "ink": "#1B1B19",
+    "accent": "#CEF163",
+    "second": "#E4F5B4",
+    "tint": "#EFF3E4",
+    "tint2": "#FBF9FE",
+    "page": "#FBF9FE",
+    "light": "#FFFFFF",
+    "shade": "#232320"
   }
 }

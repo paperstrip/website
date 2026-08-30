@@ -98,9 +98,20 @@ vers 2,7. C'est le parti pris de la référence, assumé.
 
 Une page peut porter son propre accent sans quitter l'identité du site.
 `pilotage-donnees/index.html` le fait dans un bloc `<style>` en tête de page :
-seuls `--brand-accent`, `--brand-second`, `--brand-tint` et `--brand-tint-2`
-sont redéfinis. L'encre, les fonds sombres et la typographie ne bougent pas,
-donc la navigation, le pied de page et le hero restent ceux du reste du site.
+l'accent, le secondaire, les deux teintes claires et le fond de page sont
+redéfinis avec les couleurs de la plateforme. L'encre, les fonds sombres et la
+typographie ne bougent pas, donc la navigation, le pied de page et le hero
+restent ceux du reste du site.
+
+Cet accent est clair, donc du texte blanc dessus serait illisible. C'est le
+rôle de `--brand-on-accent`, la neuvième variable de marque : blanc partout
+ailleurs, sombre sur cette page. Elle alimente `--on-coral` et `--on-coral-88`,
+utilisées partout où du texte se pose sur un aplat d'accent (boutons, bandeau
+de rappel, tuile d'accent, pastilles).
+
+`--coral-t`, la teinte de lien sur fond clair, est calculée en assombrissant
+l'accent de 35 %. Sur un accent déjà clair ça ne suffit pas : la page fixe donc
+sa propre valeur, un vert profond de la même teinte.
 
 Toutes les valeurs dérivées suivent automatiquement, y compris la couleur de
 lien `--coral-t`. Relancer `node tools/contraste.js` après changement : le
