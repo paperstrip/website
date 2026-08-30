@@ -119,6 +119,21 @@ Le JSON-LD forme un seul graphe à l'échelle du site, relié par `@id` :
 En ajoutant une page, référencez `#person` par identifiant. Ne recopiez jamais
 le nœud Person.
 
+### Questions fréquentes et balisage
+
+Le balisage `FAQPage` doit dire exactement ce que la page affiche. Google
+considère un `FAQPage` qui ne correspond pas au contenu visible comme
+trompeur, et la désynchronisation arrive dès qu'on édite le HTML sans penser
+au schema. `tools/faq-sync.py` recopie les `<details>` visibles dans le
+balisage, ce qui fait de la page la seule source de vérité :
+
+```
+python3 tools/faq-sync.py            corrige toutes les pages
+python3 tools/faq-sync.py --verifie  signale sans écrire, sortie non nulle
+```
+
+À lancer après toute modification d'une question ou d'une réponse.
+
 ## Mentions légales
 
 La page est complète pour la situation actuelle : personne physique, activité

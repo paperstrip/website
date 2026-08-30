@@ -95,9 +95,14 @@
    "name": "Plateforme de pilotage et de croisement de données",
    "serviceType": "Tableau de bord décisionnel et croisement de données pour PME",
    "description": "Plateforme adaptée au métier du client : sources internes rassemblées, croisées avec des données de contexte extérieur, restituées sur un tableau de bord et interrogeables en langage naturel grâce à un modèle d'IA intégré. Modules activables selon le besoin, dont un module de référencement croisant recherches, positions et ventes.",
-   "provider": {
-    "@id": "https://paperstrip.github.io/website/#person"
-   },
+   "provider": [
+    {
+     "@id": "https://paperstrip.github.io/website/#person"
+    },
+    {
+     "@id": "https://www.wecocoon.com/#organization"
+    }
+   ],
    "areaServed": [
     {
      "@type": "Country",
@@ -134,10 +139,18 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Est-ce un logiciel en abonnement ?",
+     "name": "Comment ça se paie ?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Non, et c'est la différence principale. Un SaaS vous fait entrer dans un moule : ses champs, ses catégories, sa façon de compter. La plateforme est une base que j'adapte à votre métier, avec les modules dont vous avez besoin et pas les autres. Vous ne payez pas des fonctions que vous n'ouvrirez jamais."
+      "text": "En deux temps : l'adaptation à votre métier au départ, puis un abonnement mensuel qui couvre la plateforme, l'hébergement, les mises à jour et l'accès aux données de contexte. Oui, il y a donc un abonnement. La différence avec un logiciel du marché n'est pas là : elle est dans le fait que vous n'entrez pas dans un moule. Vous ne payez pas des fonctions que vous n'ouvrirez jamais, et vos indicateurs restent les vôtres."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Qui développe la plateforme ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le socle et les modules sont développés en collaboration avec Wecocoon, une agence d'intelligence artificielle basée à Bruxelles. L'adaptation à votre métier, le branchement de vos sources et le suivi passent par moi. Vous avez un interlocuteur, pas deux."
      }
     },
     {
@@ -189,6 +202,13 @@
      }
     }
    ]
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://www.wecocoon.com/#organization",
+   "name": "Wecocoon",
+   "url": "https://www.wecocoon.com/",
+   "description": "Agence d'intelligence artificielle basée à Bruxelles, partenaire de développement de la plateforme de pilotage."
   }
  ]
 }
@@ -205,7 +225,6 @@
       <div class="nav-right">
         <nav class="nav-links" aria-label="Navigation principale">
           <a href="../">Agents métier</a>
-          <a href="../pilotage-donnees/" aria-current="page">Pilotage</a>
           <a href="../sites-web-ia/">Sites web</a>
           <a href="../saas-sur-mesure/">SaaS sur mesure</a>
           <a href="../sous-traitance/">Sous-traitance</a>
@@ -225,30 +244,30 @@
           <span class="t">Agents métier</span>
           <span class="d">La logique agentique livrée en API, branchée sur vos outils métier.</span>
         </a>
-        <a href="../pilotage-donnees/" class="mega-anim" aria-current="page">
-          <span class="i">02</span>
-          <span class="t">Pilotage par les données</span>
-          <span class="d">Vos chiffres croisés avec le contexte extérieur, sur un tableau de bord.</span>
-        </a>
         <a href="../sites-web-ia/" class="mega-anim">
-          <span class="i">03</span>
+          <span class="i">02</span>
           <span class="t">Sites web</span>
           <span class="d">Statiques ou WordPress. Générés avec l'IA, puis repris à la main.</span>
         </a>
         <a href="../saas-sur-mesure/" class="mega-anim">
-          <span class="i">04</span>
+          <span class="i">03</span>
           <span class="t">SaaS sur mesure</span>
           <span class="d">Un outil taillé sur votre processus, construit en semaines.</span>
         </a>
         <a href="../sous-traitance/" class="mega-anim">
-          <span class="i">05</span>
+          <span class="i">04</span>
           <span class="t">Sous-traitance</span>
           <span class="d">Renfort technique en marque blanche pour agences et sociétés de services.</span>
         </a>
         <a href="../ia-maitrisee/" class="mega-anim">
-          <span class="i">06</span>
+          <span class="i">05</span>
           <span class="t">La méthode</span>
           <span class="d">La méthode derrière les offres : diriger, contraindre, vérifier, couper.</span>
+        </a>
+        <a href="../pilotage-donnees/" class="mega-anim" aria-current="page">
+          <span class="i">06</span>
+          <span class="t">Pilotage par les données</span>
+          <span class="d">Vos chiffres croisés avec le contexte extérieur, sur un tableau de bord.</span>
         </a>
         <a href="../contact/" class="mega-anim">
           <span class="i">07</span>
@@ -368,10 +387,11 @@
 
   <section aria-labelledby="s3">
     <div class="wrap">
-      <h2 class="sec-head" id="s3" data-rv>Une plateforme qu'on adapte, pas un abonnement qu'on subit</h2>
-      <p class="lead" data-rv>La différence tient en une phrase : un logiciel en abonnement vous fait entrer dans
-      son moule, ses champs et sa façon de compter. Ici, la base existe déjà et c'est elle qui s'adapte à votre
-      métier. Les modules s'activent selon le besoin, et on n'en met pas un de plus.</p>
+      <h2 class="sec-head" id="s3" data-rv>Une plateforme adaptée à votre métier, pas un produit dans lequel il faut entrer</h2>
+      <p class="lead" data-rv>Il y a bien un abonnement, et il n'y a aucune raison de le cacher : la plateforme
+      tourne, se met à jour et va chercher les données de contexte tous les jours. Ce que vous ne payez pas, c'est
+      un moule. Un logiciel du marché vous impose ses champs, ses catégories et sa façon de compter. Ici la base
+      existe déjà et c'est elle qui s'adapte à vous, avec les modules qui servent votre cas et pas un de plus.</p>
 
       <div class="g3">
         <article class="card" data-rv>
@@ -395,6 +415,11 @@
           compte pour votre voisin, et un produit standard ne fait pas cette différence.</p>
         </article>
         <article class="card" data-rv>
+          <h3>Ce que vous payez</h3>
+          <p>L'adaptation à votre métier au départ, puis un abonnement qui couvre la plateforme, l'hébergement, les
+          mises à jour et l'accès aux données de contexte. Les deux montants sont annoncés avant de commencer.</p>
+        </article>
+        <article class="card" data-rv>
           <h3>L'hébergement</h3>
           <p>Sur mes serveurs en Belgique, ou chez le vôtre si vous en avez un. Le choix du fournisseur de modèle
           d'IA se décide au même moment que celui de l'hébergeur.</p>
@@ -413,8 +438,12 @@
       <h2 class="sec-head" id="s4" data-rv>Questions fréquentes</h2>
       <div class="faq">
         <details>
-          <summary>Est-ce un logiciel en abonnement ?</summary>
-          <p>Non, et c'est la différence principale. Un SaaS vous fait entrer dans un moule : ses champs, ses catégories, sa façon de compter. La plateforme est une base que j'adapte à votre métier, avec les modules dont vous avez besoin et pas les autres. Vous ne payez pas des fonctions que vous n'ouvrirez jamais.</p>
+          <summary>Comment ça se paie ?</summary>
+          <p>En deux temps : l'adaptation à votre métier au départ, puis un abonnement mensuel qui couvre la plateforme, l'hébergement, les mises à jour et l'accès aux données de contexte. Oui, il y a donc un abonnement. La différence avec un logiciel du marché n'est pas là : elle est dans le fait que vous n'entrez pas dans un moule. Vous ne payez pas des fonctions que vous n'ouvrirez jamais, et vos indicateurs restent les vôtres.</p>
+        </details>
+        <details>
+          <summary>Qui développe la plateforme ?</summary>
+          <p>Le socle et les modules sont développés en collaboration avec Wecocoon, une agence d'intelligence artificielle basée à Bruxelles. L'adaptation à votre métier, le branchement de vos sources et le suivi passent par moi. Vous avez un interlocuteur, pas deux.</p>
         </details>
         <details>
           <summary>Quelles sources peut-on brancher ?</summary>
@@ -441,6 +470,10 @@
           <p>Sur mes serveurs en Belgique dans la plupart des cas, ou chez votre hébergeur si vous en avez déjà un. Le choix du fournisseur de modèle d'IA se décide au même moment : quel prestataire traite vos données, dans quel pays, et ce qu'il en fait ensuite.</p>
         </details>
       </div>
+      <p class="lead" data-rv>La plateforme est développée en collaboration avec
+      <a class="lnk" href="https://www.wecocoon.com/">Wecocoon</a>, agence d'intelligence artificielle basée à
+      Bruxelles. Le socle et les modules sont un travail commun, l'adaptation à votre métier passe par moi.</p>
+
       <div class="band" data-rv>
         <div>
           <h2>Dites-moi ce que vous n'arrivez pas à savoir</h2>
