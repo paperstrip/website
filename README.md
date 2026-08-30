@@ -33,6 +33,25 @@ Deux niveaux de positionnement :
    page pilier de cet argument ; `sites-web-ia/` et `saas-sur-mesure/` en sont
    les applications concrètes et pointent toutes deux vers elle.
 
+## Images
+
+Les treize visuels de la page d'accueil sont dans `assets/img/`, servis par le
+site lui-même. Ce sont des **dégradés générés**, pas des photographies : ils
+tiennent la place en attendant les vraies images, sans dépendre d'un service
+tiers. Pour les régénérer après un changement de palette :
+
+```
+NODE_PATH=/opt/node22/lib/node_modules node tools/placeholders.js
+```
+
+Pour poser une vraie photo, écrasez le fichier correspondant en gardant le nom
+et les proportions déclarées dans le HTML (`width` et `height` servent à
+réserver la place et évitent le décalage au chargement).
+
+Point à traiter le jour où les vraies photos arrivent : les attributs `alt`
+décrivent déjà les sujets prévus, ils ne correspondent donc pas aux dégradés
+actuels.
+
 ## Changer les couleurs
 
 Toute la palette découle de **huit variables** groupées en haut de
