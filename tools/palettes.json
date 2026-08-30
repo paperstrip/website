@@ -82,5 +82,41 @@
     "page": "#FFFFFF",
     "light": "#FFFFFF",
     "shade": "#1E1E1E"
+  },
+  "coolors": {
+    "nom": "Coolors",
+    "note": "Ta palette adaptee : indigo assombri pour porter le texte, bleu ardoise eclairci pour la tuile de chiffre, cayenne en accent.",
+    "ink": "#241E56",
+    "accent": "#F35B04",
+    "second": "#A9AAF2",
+    "tint": "#FDF0E8",
+    "tint2": "#FFF6F0",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#2E2769"
+  },
+  "coolors-profond": {
+    "nom": "Coolors profond",
+    "note": "Meme chose, encre encore plus profonde et accent orange tigre plutot que cayenne.",
+    "ink": "#1C1745",
+    "accent": "#F18701",
+    "second": "#A9AAF2",
+    "tint": "#FCEFE3",
+    "tint2": "#FFF7F1",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#252048"
+  },
+  "coolors-ambre": {
+    "nom": "Coolors ambre",
+    "note": "Meme encre et meme accent, mais l'ambre remplace le bleu ardoise en secondaire.",
+    "ink": "#241E56",
+    "accent": "#F35B04",
+    "second": "#F9CF63",
+    "tint": "#FEF3E0",
+    "tint2": "#FFFAF2",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#2E2769"
   }
 }
