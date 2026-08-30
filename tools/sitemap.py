@@ -16,6 +16,7 @@ BASE = "https://paperstrip.github.io/website/"
 
 PAGES = [
     ("",                 "index.html"),
+    ("pilotage-donnees/","pilotage-donnees/index.html"),
     ("sites-web-ia/",    "sites-web-ia/index.html"),
     ("saas-sur-mesure/", "saas-sur-mesure/index.html"),
     ("sous-traitance/",  "sous-traitance/index.html"),
