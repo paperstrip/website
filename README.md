@@ -54,6 +54,21 @@ en dérive par `color-mix()` : gris de texte, filets, teintes de survol,
 Ne modifiez pas les variables situées sous « dérivés » : elles sont
 recalculées à partir des huit précédentes.
 
+### Palettes enregistrées
+
+Six palettes complètes sont stockées dans `tools/palettes.json`, dont celle en
+place. `tools/theme.py` les applique sans toucher au CSS à la main :
+
+```
+python3 tools/theme.py --liste      # les six, et celle en place
+python3 tools/theme.py --actuelle   # les huit couleurs du moment
+python3 tools/theme.py ardoise      # appliquer
+python3 tools/theme.py corail       # revenir à la palette de départ
+```
+
+Les six passent l'audit de contraste. Pour en ajouter une, copiez un bloc dans
+`tools/palettes.json` et vérifiez-la avant de la garder.
+
 **Après tout changement de palette, lancez la vérification de contraste.**
 Une teinte plus claire casse silencieusement la lisibilité des petits textes :
 

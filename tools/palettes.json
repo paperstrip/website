@@ -1,0 +1,74 @@
+{
+  "corail": {
+    "nom": "Corail (actuelle)",
+    "note": "Indigo profond et corail. Palette de depart, reprise de la reference.",
+    "ink": "#1A1249",
+    "accent": "#EF7E5D",
+    "second": "#B3AAE5",
+    "tint": "#FDF2EF",
+    "tint2": "#FFF5F5",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#243749"
+  },
+  "ardoise": {
+    "nom": "Ardoise",
+    "note": "Bleu ardoise froid et orange brule. Plus sobre, lecture plus technique.",
+    "ink": "#14202B",
+    "accent": "#E8663F",
+    "second": "#A8C0D6",
+    "tint": "#FBF1EC",
+    "tint2": "#F5F8FA",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#1E2B36"
+  },
+  "foret": {
+    "nom": "Foret",
+    "note": "Vert profond et terracotta. Chaleureux, moins vu dans le secteur.",
+    "ink": "#12291F",
+    "accent": "#D9744A",
+    "second": "#A9C3A5",
+    "tint": "#F6F1E9",
+    "tint2": "#F3F7F2",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#1B3227"
+  },
+  "prune": {
+    "nom": "Prune",
+    "note": "Prune sombre et rose profond. Plus creatif, moins corporate.",
+    "ink": "#2A1230",
+    "accent": "#E0637C",
+    "second": "#C9AEDA",
+    "tint": "#FCF0F3",
+    "tint2": "#FBF4F8",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#33203A"
+  },
+  "encre": {
+    "nom": "Encre",
+    "note": "Bleu nuit et bleu vif, camaieu monochrome. Le plus classique des six.",
+    "ink": "#0F1729",
+    "accent": "#5B8CEC",
+    "second": "#9FC0F5",
+    "tint": "#EEF3FC",
+    "tint2": "#F5F8FD",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#16233B"
+  },
+  "sable": {
+    "nom": "Sable",
+    "note": "Brun sombre et ocre. Fonds cremes, rendu imprime.",
+    "ink": "#241F18",
+    "accent": "#DB7A42",
+    "second": "#D9C9A8",
+    "tint": "#F7F1E6",
+    "tint2": "#FAF6EF",
+    "page": "#FFFFFF",
+    "light": "#FFFFFF",
+    "shade": "#2E2A22"
+  }
+}
