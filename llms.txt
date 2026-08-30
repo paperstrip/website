@@ -1,0 +1,39 @@
+# Arnaud Herr
+
+> Indépendant belge. J'intègre des agents IA dans les outils métier qui tournent
+> déjà : ERP, CRM, boutique en ligne. Je construis aussi des sites web et des
+> logiciels métier sur mesure, produits avec l'IA puis repris à la main.
+
+Basé en Belgique, j'interviens en Wallonie et à Bruxelles, en français.
+Huit ans passés à connecter des systèmes qui n'avaient pas prévu de se parler.
+
+Ce qui me distingue : l'IA produit vite, et produit donc vite du médiocre quand
+personne ne la tient. Mon travail commence après la génération, au moment où il
+faut décider, vérifier et couper.
+
+## Ce que je fais
+
+- [Agents IA branchés sur vos outils métier](https://paperstrip.github.io/website/) : tri documentaire automatisé, réponses client assistées, ponts entre boutique en ligne et outil de gestion. L'intelligence arrive dans le logiciel que les équipes ouvrent déjà, sans nouvel écran à apprendre.
+- [Sites web sur mesure conçus avec l'IA](https://paperstrip.github.io/website/sites-web-ia/) : statiques ou WordPress. Rendu non générique, structure HTML sémantique, Core Web Vitals tenus, référencement naturel et GEO travaillés.
+- [Logiciels métier sur mesure](https://paperstrip.github.io/website/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités, des tests là où une erreur coûte de l'argent, et un code reprenable par un autre prestataire.
+- [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/website/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
+- [Contact](https://paperstrip.github.io/website/contact/) : arnaudherr@gmail.com. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement.
+
+## Comment je travaille
+
+1. Une demi-journée sur place, à côté des gens qui font le travail. On isole deux ou trois gestes répétitifs et on met un chiffre dessus.
+2. Un seul cas d'usage mis en production vite, jugé en conditions réelles avant d'engager plus large.
+3. Ce qui a fait ses preuves se réplique. Le reste s'arrête.
+
+## Ce que je refuse
+
+- Livrer un code que personne d'autre que moi ne peut reprendre. C'est une condition posée au départ.
+- Faire passer un logiciel sur mesure quand un produit du marché fait le travail pour moins cher.
+- Promettre un rang en GEO : les moteurs génératifs ne publient pas de position, on peut réunir les conditions d'être cité, pas garantir la citation.
+
+## Cadre sur les données
+
+Anonymisation des données personnelles avant traitement, hébergement et
+fournisseur de modèle discutés dès le départ, validation humaine partout où la
+décision engage l'entreprise vis-à-vis d'un client, traçabilité de bout en bout.
+Exigences RGPD prises comme point de départ.

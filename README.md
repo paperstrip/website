@@ -11,7 +11,9 @@ ia-maitrisee/         page pilier : sortir du générique, performance, SEO et G
 contact/              contact
 404.html              page d'erreur (autonome, styles en ligne)
 robots.txt            indexation + déclaration du sitemap
-sitemap.xml           5 URL
+sitemap.xml           généré, ne pas éditer à la main
+llms.txt              résumé du site pour les moteurs génératifs
+tools/sitemap.py      régénère sitemap.xml depuis les dates git
 assets/site.css       styles partagés par toutes les pages
 assets/site.js        révélation au scroll, en-tête au scroll, menu mobile
 assets/og.jpg         image de partage Open Graph (1200×630)
@@ -30,12 +32,39 @@ Deux niveaux de positionnement :
    page pilier de cet argument ; `sites-web-ia/` et `saas-sur-mesure/` en sont
    les applications concrètes et pointent toutes deux vers elle.
 
+## Données structurées
+
+Le JSON-LD forme un seul graphe à l'échelle du site, relié par `@id` :
+
+- `#person` et `#service` sont définis une seule fois, sur l'accueil
+- chaque page interne les référence par `{"@id": "..."}` au lieu de les
+  redéclarer, sinon les moteurs voient plusieurs entités « Arnaud Herr »
+- chaque page a son `WebPage`, son `BreadcrumbList` et, s'il y a lieu, son
+  `FAQPage`, tous identifiés par `@id`
+
+En ajoutant une page, référencez `#person` par identifiant. Ne recopiez jamais
+le nœud Person.
+
+## Sitemap
+
+`sitemap.xml` est généré par `tools/sitemap.py`, qui lit les dates de dernier
+commit de chaque page. À lancer après avoir commité une modification de
+contenu :
+
+```
+python3 tools/sitemap.py
+```
+
+`changefreq` et `priority` ne sont pas émis : Google a confirmé les ignorer et
+Bing fait de même. Seul `lastmod` est exploité, et uniquement s'il est exact.
+
 ## Ajouter une page
 
 1. Copier une page interne existante et adapter le contenu.
 2. Mettre à jour la navigation dans **chaque** page (`nav-links` et `m-menu`)
    ainsi que le pied de page — il n'y a pas de gabarit partagé.
-3. Ajouter l'URL dans `sitemap.xml`.
+3. Ajouter l'URL dans `tools/sitemap.py`, puis relancer le script.
+4. Ajouter l'entrée dans `llms.txt`.
 4. Renseigner `title`, `meta description`, `link canonical`, les balises
    Open Graph et le JSON-LD (`BreadcrumbList` au minimum).
 
