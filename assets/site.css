@@ -22,9 +22,10 @@
     --line:rgba(23,18,63,.11);
 
     /* rayons resserrés : les grands blocs se calment, seules les commandes restent en pilule */
-    --r:14px;
-    --r-sm:10px;
-    --pill:100px;
+    --r:10px;      /* blocs — mesuré ~9px sur la référence */
+    --r-sm:8px;    /* panneaux imbriqués */
+    --r-bar:16px;  /* barre de navigation et menu mobile */
+    --pill:100px;  /* réservé aux commandes : boutons, tags, pastilles */
 
     --pad:clamp(20px,5vw,44px);
     --sec:clamp(64px,11vw,120px);
@@ -32,11 +33,11 @@
     --face:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
     /* ---------- ÉCHELLE TYPO FLUIDE (ancrée 380px → 1280px) ---------- */
-    --t-h1:clamp(2.25rem,1.41rem + 3.56vw,4.25rem);      /* 36 → 68 */
-    --t-h2:clamp(1.75rem,1.28rem + 2.00vw,2.875rem);     /* 28 → 46 */
-    --t-h3:clamp(1.1875rem,1.11rem + 0.33vw,1.375rem);   /* 19 → 22 */
+    --t-h1:clamp(2.125rem,1.333rem + 3.33vw,4rem);       /* 34 → 64 */
+    --t-h2:clamp(1.625rem,1.203rem + 1.78vw,2.625rem);   /* 26 → 42 */
+    --t-h3:clamp(1.25rem,1.171rem + 0.33vw,1.4375rem);   /* 20 → 23 */
     --t-body:clamp(1.0625rem,1.03rem + 0.11vw,1.125rem); /* 17 → 18 */
-    --t-lead:clamp(1.125rem,1.02rem + 0.44vw,1.3125rem); /* 18 → 21 */
+    --t-lead:clamp(1.1875rem,1.135rem + 0.22vw,1.3125rem);/* 19 → 21 */
     --t-sm:clamp(0.9375rem,0.92rem + 0.11vw,1rem);       /* 15 → 16 */
     --t-xs:0.8125rem;                                     /* 13 */
   }
@@ -47,7 +48,7 @@
   body{
     background:#fff;color:var(--ink);
     font-family:var(--face);font-size:var(--t-body);font-weight:400;
-    line-height:1.6;letter-spacing:-.006em;
+    line-height:1.58;letter-spacing:0;
     font-variant-numeric:tabular-nums;
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
@@ -56,15 +57,18 @@
   /* ---------- TYPO ---------- */
   h1,h2,h3{font-weight:600;text-wrap:balance;overflow-wrap:break-word}
   /* le h1 remplit ses lignes : balance produisait une derniere ligne orpheline */
-  h1{font-size:var(--t-h1);line-height:1.08;letter-spacing:-.028em;text-wrap:pretty}
-  h2{font-size:var(--t-h2);line-height:1.1;letter-spacing:-.026em}
-  h3{font-size:var(--t-h3);line-height:1.28;letter-spacing:-.015em}
+  /* en mobile l'air entre les lignes prime : interligne ouvert, chasse presque
+     neutre. Le resserrement n'a de sens qu'aux grandes tailles. */
+  h1{font-size:var(--t-h1);line-height:1.22;letter-spacing:-.012em;text-wrap:pretty}
+  h2{font-size:var(--t-h2);line-height:1.24;letter-spacing:-.012em}
+  h3{font-size:var(--t-h3);line-height:1.34;letter-spacing:-.006em}
   @media(min-width:760px){
-    h1{line-height:1.03;letter-spacing:-.038em}
-    h2{line-height:1.06;letter-spacing:-.034em}
+    h1{line-height:1.06;letter-spacing:-.03em}
+    h2{line-height:1.1;letter-spacing:-.024em}
+    h3{line-height:1.28;letter-spacing:-.012em}
   }
   p{text-wrap:pretty}
-  .lead{font-size:var(--t-lead);line-height:1.45;letter-spacing:-.014em;color:var(--ink-70);max-width:56ch}
+  .lead{font-size:var(--t-lead);line-height:1.42;letter-spacing:-.008em;color:var(--ink-70);max-width:56ch}
   .eyebrow{
     display:inline-flex;align-items:center;gap:10px;
     font-size:var(--t-xs);font-weight:700;line-height:1;
@@ -125,7 +129,7 @@
     background:rgba(255,255,255,.09);
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     border:1px solid rgba(255,255,255,.16);
-    border-radius:var(--pill);
+    border-radius:var(--r-bar);
     padding:8px 8px 8px 20px;
     transition:background .3s var(--ease),border-color .3s var(--ease);
   }
@@ -156,7 +160,7 @@
   .burger[aria-expanded="true"] span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
 
   .m-menu{
-    margin-top:8px;padding:14px;border-radius:var(--r);
+    margin-top:8px;padding:14px;border-radius:var(--r-bar);
     background:rgba(23,18,63,.96);border:1px solid rgba(255,255,255,.10);
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   }
@@ -265,7 +269,7 @@
     backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   }
   .pcard-panel h3{color:#fff;margin-bottom:10px}
-  .pcard-panel p{color:rgba(255,255,255,.84);font-size:var(--t-sm);line-height:1.55}
+  .pcard-panel p{color:rgba(255,255,255,.84);font-size:var(--t-body);line-height:1.5}
   .pcard-panel .out{
     margin-top:16px;font-size:var(--t-xs);font-weight:700;color:var(--coral);
     letter-spacing:.005em;
@@ -278,7 +282,7 @@
     min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;
   }
   .b h3{margin-bottom:8px}
-  .b p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55;max-width:42ch}
+  .b p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5;max-width:42ch}
   .b-3{grid-column:span 3}.b-2{grid-column:span 2}
   .b-ink{background:linear-gradient(150deg,var(--violet),#2C2270)}
   .b-ink h3,.b-ink .big{color:#fff}
@@ -319,7 +323,7 @@
   /* ---------- TERRAINS ---------- */
   .terr .shot{aspect-ratio:5/4;margin-bottom:14px}
   .terr h3{margin-bottom:6px}
-  .terr p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55}
+  .terr p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
 
   /* ---------- MÉTHODE ---------- */
   .step{background:#fff;border-radius:var(--r);padding:clamp(24px,2.3vw,30px);border:1px solid var(--line)}
@@ -330,13 +334,13 @@
     font-weight:700;font-size:var(--t-sm);line-height:1;margin-bottom:18px;
   }
   .step h3{margin-bottom:8px}
-  .step p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55}
+  .step p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
 
   /* ---------- CADRE ---------- */
   .tlist li{padding:18px 0;border-bottom:1px solid var(--line)}
   .tlist li:first-child{border-top:1px solid var(--line)}
   .tlist h3{font-size:var(--t-body);font-weight:700;letter-spacing:-.012em;margin-bottom:3px}
-  .tlist p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.5}
+  .tlist p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
 
   /* ---------- CTA ---------- */
   .cta{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;display:flex;align-items:center;background:linear-gradient(140deg,var(--violet),#2C2270)}
@@ -404,7 +408,7 @@
   .card{background:var(--soft);border-radius:var(--r);padding:clamp(22px,2.2vw,30px)}
   .card.on-soft{background:#fff}
   .card h3{margin-bottom:8px}
-  .card p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55}
+  .card p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
   .card .n{
     width:34px;height:34px;border-radius:var(--pill);background:var(--coral);color:#fff;
     display:flex;align-items:center;justify-content:center;
@@ -413,7 +417,7 @@
 
   /* --- liste à coches --- */
   .checks{margin-top:clamp(26px,3vw,36px);display:grid;gap:14px}
-  .checks li{position:relative;padding-left:30px;color:var(--ink-70);font-size:var(--t-sm);line-height:1.55}
+  .checks li{position:relative;padding-left:30px;color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
   .checks li::before{
     content:'';position:absolute;left:0;top:.55em;width:11px;height:6px;
     border-left:1.8px solid var(--coral);border-bottom:1.8px solid var(--coral);
@@ -430,9 +434,9 @@
   .v-now{background:var(--ink);color:#fff}
   .v-now h3{color:#fff}
   .v-now li{color:rgba(255,255,255,.82)}
-  .versus h3{margin-bottom:14px;font-size:var(--t-body);font-weight:700;letter-spacing:-.012em}
+  .versus h3{margin-bottom:14px;font-size:var(--t-h3);font-weight:600;letter-spacing:-.006em}
   .versus ul{display:grid;gap:11px}
-  .versus li{font-size:var(--t-sm);line-height:1.5;padding-left:16px;position:relative}
+  .versus li{font-size:var(--t-body);line-height:1.5;padding-left:16px;position:relative}
   .versus li::before{content:'';position:absolute;left:0;top:.62em;width:6px;height:1.5px;background:currentColor;opacity:.5}
 
   /* --- FAQ (repliable, et lisible par les moteurs génératifs) --- */
@@ -450,7 +454,7 @@
     transform:rotate(45deg);transition:transform .3s var(--ease);
   }
   .faq details[open] summary::after{transform:rotate(-135deg)}
-  .faq details p{padding-bottom:22px;color:var(--ink-70);font-size:var(--t-sm);line-height:1.6;max-width:66ch}
+  .faq details p{padding-bottom:22px;color:var(--ink-70);font-size:var(--t-body);line-height:1.55;max-width:66ch}
   .faq details p + p{margin-top:-8px;padding-bottom:22px}
 
   /* --- bandeau de rappel --- */
@@ -473,7 +477,7 @@
   .sec-soft .offer{border-color:transparent}
   .offer:hover{border-color:var(--coral)}
   .offer h3{margin-bottom:8px}
-  .offer p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55;flex:1}
+  .offer p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5;flex:1}
   .offer .go{
     display:inline-flex;align-items:center;gap:8px;margin-top:20px;
     font-size:var(--t-sm);font-weight:600;color:var(--coral);
