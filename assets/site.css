@@ -75,7 +75,6 @@
     --r-sm:10px;
     --r-bar:16px;
     --r-btn:22px;
-    --r-tag:13px;
     --pill:100px;
     --inset:0px;              /* retrait des blocs pleine largeur, cf. altCtn */
 
@@ -190,16 +189,6 @@
   @media(min-width:640px){.btn-block{width:auto}}
 
 
-  .tag{
-    display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
-    background:transparent;border:1px solid var(--on-dark-20);
-    color:var(--on-dark);
-    min-height:31px;padding:3px 10px;border-radius:var(--r-bar);
-    font-size:var(--t-xs);font-weight:400;line-height:1;
-    letter-spacing:.1em;text-transform:uppercase;
-    transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
-  }
-  .tag:hover{background:var(--coral);border-color:var(--coral);color:var(--on-coral)}
 
   /* ---------- EN-TÊTE ---------- */
   .site-header{position:fixed;top:clamp(10px,1.6vw,16px);left:0;right:0;z-index:60}
@@ -385,7 +374,14 @@
   .hero .eyebrow{color:var(--on-dark-70);margin:22px 0 20px}
   .hero h1{color:var(--on-dark);max-width:14ch;margin-bottom:26px}
   .hero h1 em{font-style:normal;color:var(--coral)}
-  .hero-tags{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+  /* Les domaines couverts, sous le titre. Une ligne de mots, pas des pastilles
+     cliquables : elles promettaient une navigation qui n'existait pas, et
+     n'en montraient que trois sur cinq. */
+  .hero-line{
+    font-size:var(--t-xs);letter-spacing:.1em;text-transform:uppercase;
+    line-height:1.9;color:var(--on-dark-70);max-width:46ch;
+  }
+  @media(min-width:700px){.hero-line{max-width:none}}
   @media(max-width:640px){.hero{min-height:100svh}}
 
   /* ---------- SECTIONS ---------- */
