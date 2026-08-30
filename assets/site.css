@@ -21,14 +21,14 @@
        Tout le reste en découle. Après modification, relancer la
        vérification de contraste : tools/contraste.js
        ================================================================== */
-    --brand-ink:#3D348B;      /* sombre : texte, aplats, pied de page */
-    --brand-accent:#F35B04;   /* accent : boutons, liens, pastilles */
-    --brand-second:#7678ED;   /* secondaire : tuile de chiffre */
-    --brand-tint:#FDF0E8;     /* teinte claire : cartes */
-    --brand-tint-2:#FFF6F0;   /* teinte très claire : fonds de section */
-    --brand-page:#FFFFFF;     /* fond de page */
+    --brand-ink:#1B1B19;      /* sombre : texte, aplats, pied de page */
+    --brand-accent:#3E9268;   /* accent : boutons, liens, pastilles */
+    --brand-second:#C4D3C6;   /* secondaire : tuile de chiffre */
+    --brand-tint:#EEEBE3;     /* teinte claire : cartes */
+    --brand-tint-2:#F6F3EC;   /* teinte très claire : fonds de section */
+    --brand-page:#FBFAF6;     /* fond de page */
     --brand-light:#FFFFFF;    /* texte et éléments sur fond sombre */
-    --brand-shade:#2E2769;    /* voile posé sur les photos */
+    --brand-shade:#232320;    /* voile posé sur les photos */
     /* dégradé du bas de hero, repris tel quel de la référence.
        Remplacer #000 par une autre teinte pour le colorer. */
     --hero-overlay:linear-gradient(to top,#000,#000000fa 9.99%,#000000ec 19.07%,#000000d7 27.44%,#000000bd 35.26%,#0000009f 42.72%,#00000080,#00000060 57.28%,#00000042 64.74%,#00000028 72.56%,#00000013 80.93%,#00000005 90.01%,#0000);
@@ -428,8 +428,8 @@
   .b-ink h3,.b-ink .big{color:var(--ink)}
   .b-ink p{color:var(--on-accent-88)}
   .b-ink .big{
-    font-size:clamp(2.5rem,1.9rem + 2.6vw,3.5rem);font-weight:700;
-    letter-spacing:-.05em;line-height:1;margin-bottom:10px;
+    font-size:var(--t-h2);font-weight:400;
+    letter-spacing:0;line-height:1.1;margin-bottom:10px;
   }
   .b-coral{background:var(--coral)}
   .b-coral h3{color:var(--on-dark)}
