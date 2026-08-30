@@ -2,640 +2,822 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
-<title>Arnaud Herr — L'IA branchée sur vos outils métier</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#17123F">
+
+<title>Arnaud Herr — Agents IA branchés sur vos outils métier</title>
+<meta name="description" content="Intégration d'agents IA dans votre ERP, CRM ou boutique en ligne : tri documentaire, réponses assistées, ponts entre systèmes. Indépendant, Belgique.">
+<meta name="author" content="Arnaud Herr">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<!-- ⚠️ URL canonique du site — la seule valeur à changer si un nom de domaine
+     propre remplace GitHub Pages (à répercuter dans sitemap.xml et robots.txt). -->
+<link rel="canonical" href="https://paperstrip.github.io/website/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Arnaud Herr">
+<meta property="og:url" content="https://paperstrip.github.io/website/">
+<meta property="og:title" content="Arnaud Herr — Agents IA branchés sur vos outils métier">
+<meta property="og:description" content="Des agents IA qui vivent à l'intérieur de votre ERP, de votre CRM, de votre boutique en ligne. Branchés sur votre donnée réelle.">
+<meta property="og:image" content="https://paperstrip.github.io/website/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arnaud Herr — vos outils savent déjà tout, ils ne savent pas encore agir.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arnaud Herr — Agents IA branchés sur vos outils métier">
+<meta name="twitter:description" content="Des agents IA qui vivent à l'intérieur de votre ERP, de votre CRM, de votre boutique en ligne.">
+<meta name="twitter:image" content="https://paperstrip.github.io/website/assets/og.jpg">
+
+<link rel="preload" href="assets/fonts/pjs-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
 <style>
+  /* ---------- FONTES AUTO-HÉBERGÉES (variable, 2 sous-ensembles) ---------- */
+  @font-face{
+    font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;
+    src:url(assets/fonts/pjs-latin.woff2) format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;
+    src:url(assets/fonts/pjs-latin-ext.woff2) format('woff2');
+    unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+  }
+
   :root{
     color-scheme:light only;
-    --white:#FFFFFF;
     --soft:#F4F2FC;
     --ink:#17123F;
     --ink-70:rgba(23,18,63,.74);
     --ink-45:rgba(23,18,63,.48);
     --coral:#FF6B45;
-    --coral-d:#EA5227;
+    --coral-d:#E14F26;
     --violet:#5B45E0;
-    --line:rgba(23,18,63,.10);
-    --r:26px;
-    --r-sm:18px;
+    --line:rgba(23,18,63,.11);
+
+    /* rayons resserrés : les grands blocs se calment, seules les commandes restent en pilule */
+    --r:14px;
+    --r-sm:10px;
     --pill:100px;
-    /* gouttière fluide : plus jamais de bloc collé au viewport */
+
     --pad:clamp(20px,5vw,44px);
-    --sec:clamp(72px,10vw,128px);
+    --sec:clamp(64px,11vw,120px);
     --ease:cubic-bezier(.22,.61,.36,1);
-    --face:'Plus Jakarta Sans',-apple-system,sans-serif;
+    --face:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+
+    /* ---------- ÉCHELLE TYPO FLUIDE (ancrée 380px → 1280px) ---------- */
+    --t-h1:clamp(2.25rem,1.41rem + 3.56vw,4.25rem);      /* 36 → 68 */
+    --t-h2:clamp(1.75rem,1.28rem + 2.00vw,2.875rem);     /* 28 → 46 */
+    --t-h3:clamp(1.1875rem,1.11rem + 0.33vw,1.375rem);   /* 19 → 22 */
+    --t-body:clamp(1.0625rem,1.03rem + 0.11vw,1.125rem); /* 17 → 18 */
+    --t-lead:clamp(1.125rem,1.02rem + 0.44vw,1.3125rem); /* 18 → 21 */
+    --t-sm:clamp(0.9375rem,0.92rem + 0.11vw,1rem);       /* 15 → 16 */
+    --t-xs:0.8125rem;                                     /* 13 */
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;background:#fff!important;overflow-x:hidden;scroll-padding-top:96px}
+  html{scroll-behavior:smooth;background:#fff;overflow-x:hidden;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
 
   body{
-    background:#fff!important;color:var(--ink)!important;
-    -webkit-text-fill-color:var(--ink);
-    font-family:var(--face);font-size:18px;line-height:1.55;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+    background:#fff;color:var(--ink);
+    font-family:var(--face);font-size:var(--t-body);font-weight:400;
+    line-height:1.6;letter-spacing:-.006em;
+    font-variant-numeric:tabular-nums;
+    -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
   }
 
-  .wrap{width:100%;max-width:1240px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
-
-  h1,h2,h3,h4{font-weight:600;letter-spacing:-.035em;line-height:1.04}
-  h1{font-size:clamp(34px,5.8vw,72px)}
-  h2{font-size:clamp(28px,4.4vw,54px);line-height:1.07}
-  h3{font-size:clamp(21px,2.4vw,29px);line-height:1.14}
-  h4{font-size:21px;line-height:1.2;font-weight:600}
+  /* ---------- TYPO ---------- */
+  h1,h2,h3{font-weight:600;text-wrap:balance;overflow-wrap:break-word}
+  /* le h1 remplit ses lignes : balance produisait une derniere ligne orpheline */
+  h1{font-size:var(--t-h1);line-height:1.08;letter-spacing:-.028em;text-wrap:pretty}
+  h2{font-size:var(--t-h2);line-height:1.1;letter-spacing:-.026em}
+  h3{font-size:var(--t-h3);line-height:1.28;letter-spacing:-.015em}
+  @media(min-width:760px){
+    h1{line-height:1.03;letter-spacing:-.038em}
+    h2{line-height:1.06;letter-spacing:-.034em}
+  }
+  p{text-wrap:pretty}
+  .lead{font-size:var(--t-lead);line-height:1.45;letter-spacing:-.014em;color:var(--ink-70);max-width:56ch}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:var(--t-xs);font-weight:700;line-height:1;
+    letter-spacing:.15em;text-transform:uppercase;
+  }
+  .eyebrow::before{content:'';width:24px;height:1px;background:var(--coral);flex:none}
 
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
+  ul,ol{list-style:none}
 
-  /* ---------- BOUTONS ---------- */
+  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:var(--pad)}
+
+  .skip{
+    position:absolute;left:-9999px;top:0;z-index:200;
+    background:var(--ink);color:#fff;padding:12px 18px;border-radius:var(--r-sm);font-size:var(--t-sm);
+  }
+  .skip:focus{left:var(--pad);top:12px}
+  :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
+
+  /* ---------- COMMANDES (aucune ombre, aucun halo) ---------- */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;
-    background:var(--coral);color:#fff!important;-webkit-text-fill-color:#fff;
-    padding:17px 32px;border-radius:var(--pill);
-    font-size:17px;font-weight:600;letter-spacing:-.01em;
-    box-shadow:0 10px 24px -12px rgba(255,107,69,.85);
-    transition:background .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
+    background:var(--coral);color:#fff;
+    padding:16px 28px;border-radius:var(--pill);
+    font-size:var(--t-sm);font-weight:600;letter-spacing:-.008em;line-height:1;
+    border:1px solid transparent;
+    transition:background .25s var(--ease);
   }
-  .btn svg{transition:transform .3s var(--ease)}
-  .btn:hover{background:var(--coral-d);transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(255,107,69,.9)}
+  .btn svg{flex:none;transition:transform .25s var(--ease)}
+  .btn:hover{background:var(--coral-d)}
   .btn:hover svg{transform:translateX(3px)}
-  .btn-sm{padding:11px 20px;font-size:15px;box-shadow:none}
-  .btn-sm:hover{box-shadow:none}
+  .btn-sm{padding:11px 18px;font-size:var(--t-xs)}
 
-  /* lien secondaire du hero : discret, pas un 2e bouton */
-  .link-ghost{
+  .link-u{
     display:inline-flex;align-items:center;gap:8px;
-    color:rgba(255,255,255,.86)!important;-webkit-text-fill-color:rgba(255,255,255,.86);
-    font-size:16px;font-weight:500;padding:6px 2px;
-    border-bottom:1px solid rgba(255,255,255,.28);
-    transition:color .25s,border-color .25s;
+    font-size:var(--t-sm);font-weight:500;line-height:1;padding-bottom:6px;
+    border-bottom:1px solid currentColor;color:rgba(255,255,255,.72);
+    transition:color .25s var(--ease);
   }
-  .link-ghost:hover{color:#fff!important;-webkit-text-fill-color:#fff;border-color:#fff}
+  .link-u:hover{color:#fff}
 
-  /* tags hero : petits, secondaires, ils ne concurrencent plus le CTA */
   .tag{
     display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
-    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.17);
-    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-    color:rgba(255,255,255,.80)!important;-webkit-text-fill-color:rgba(255,255,255,.80);
-    padding:7px 14px;font-size:13px;font-weight:500;letter-spacing:0;
-    border-radius:var(--pill);
-    transition:background .25s var(--ease),border-color .25s var(--ease),color .25s;
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    color:rgba(255,255,255,.80);
+    padding:7px 13px;border-radius:var(--pill);
+    font-size:var(--t-xs);font-weight:500;line-height:1.2;letter-spacing:-.004em;
+    transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
   }
-  .tag::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--coral);flex:none}
-  .tag:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.34);color:#fff!important;-webkit-text-fill-color:#fff}
+  .tag::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--coral);flex:none}
+  .tag:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.32);color:#fff}
 
-  /* ---------- NAV ---------- */
-  .navbar{position:fixed;top:clamp(10px,1.6vw,18px);left:0;right:0;z-index:60}
+  /* ---------- EN-TÊTE ---------- */
+  .site-header{position:fixed;top:clamp(10px,1.6vw,16px);left:0;right:0;z-index:60}
   .nav-in{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:nowrap;
-    background:rgba(255,255,255,.10);
-    backdrop-filter:blur(18px) saturate(140%);
-    -webkit-backdrop-filter:blur(18px) saturate(140%);
-    border:1px solid rgba(255,255,255,.18);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:rgba(255,255,255,.09);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.16);
     border-radius:var(--pill);
-    padding:9px 9px 9px 22px;
-    transition:background .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
+    padding:8px 8px 8px 20px;
+    transition:background .3s var(--ease),border-color .3s var(--ease);
   }
-  /* au scroll la barre passe sur fond clair : on la densifie pour garder le contraste */
-  .navbar.is-stuck .nav-in{
-    background:rgba(23,18,63,.90);
-    border-color:rgba(255,255,255,.10);
-    box-shadow:0 14px 34px -20px rgba(23,18,63,.7);
+  .site-header.is-stuck .nav-in{background:rgba(23,18,63,.92);border-color:rgba(255,255,255,.09)}
+  .logo{font-size:1.25rem;font-weight:700;letter-spacing:-.04em;color:#fff;white-space:nowrap}
+  .logo span{color:var(--coral)}
+  .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+  .nav-links{display:flex;gap:26px;margin-right:14px}
+  .nav-links a{
+    position:relative;font-size:var(--t-sm);color:rgba(255,255,255,.84);
+    white-space:nowrap;transition:color .25s var(--ease);
   }
-  .logo{font-weight:800;font-size:21px;letter-spacing:-.045em;color:#fff!important;-webkit-text-fill-color:#fff;white-space:nowrap}
-  .logo em{font-style:normal;color:var(--coral);-webkit-text-fill-color:var(--coral)}
-  .nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
-  .nav-links{display:flex;gap:26px;margin-right:12px}
-  .nav-links a{position:relative;color:rgba(255,255,255,.86)!important;-webkit-text-fill-color:rgba(255,255,255,.86);font-size:16px;white-space:nowrap;transition:color .25s}
   .nav-links a::after{
-    content:'';position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--coral);
-    transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);
+    content:'';position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--coral);
+    transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);
   }
-  .nav-links a:hover{color:#fff!important;-webkit-text-fill-color:#fff}
+  .nav-links a:hover{color:#fff}
   .nav-links a:hover::after{transform:scaleX(1)}
+
   .burger{
-    width:46px;height:46px;border-radius:var(--pill);flex-shrink:0;
-    border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);
-    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-    display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;
+    width:44px;height:44px;border-radius:var(--pill);flex:none;cursor:pointer;
+    border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.09);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;
   }
-  .burger i{width:17px;height:1.6px;background:#fff;border-radius:2px}
+  .burger span{display:block;width:16px;height:1.5px;background:#fff;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+  .burger[aria-expanded="true"] span:first-child{transform:translateY(3.25px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
+
+  .m-menu{
+    margin-top:8px;padding:14px;border-radius:var(--r);
+    background:rgba(23,18,63,.96);border:1px solid rgba(255,255,255,.10);
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  }
+  .m-menu a{
+    display:block;padding:13px 10px;color:rgba(255,255,255,.88);
+    font-size:var(--t-lead);font-weight:500;letter-spacing:-.015em;
+    border-bottom:1px solid rgba(255,255,255,.09);
+  }
+  .m-menu a:last-child{border-bottom:0}
+  @media(min-width:961px){.m-menu{display:none}}
   @media(max-width:960px){.nav-links{display:none}.burger{display:flex}}
-  @media(max-width:420px){
-    .nav-in{padding:8px 8px 8px 18px}
-    .logo{font-size:18px}
-    .nav-right .btn{padding:10px 16px;font-size:14px}
-    .burger{width:42px;height:42px}
+  @media(max-width:400px){
+    .nav-in{padding:7px 7px 7px 16px}
+    .logo{font-size:1.0625rem}
   }
 
   /* ---------- HERO ---------- */
   .hero{
-    position:relative;min-height:min(94vh,900px);
+    position:relative;min-height:min(94svh,880px);
     display:flex;align-items:flex-end;overflow:hidden;
     background:linear-gradient(140deg,#2C2270,#17123F 55%,#3A1E52);
   }
   .hero-bg{position:absolute;inset:0;overflow:hidden}
-  .hero-bg img{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62;
-    transform:scale(1.08);animation:heroZoom 1.6s var(--ease) forwards;
-  }
-  @keyframes heroZoom{to{transform:scale(1)}}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.6}
   .hero::after{
     content:'';position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(180deg,rgba(23,18,63,.74) 0%,rgba(23,18,63,.20) 34%,rgba(23,18,63,.90) 100%);
+    background:linear-gradient(180deg,rgba(23,18,63,.76) 0%,rgba(23,18,63,.24) 34%,rgba(23,18,63,.92) 100%);
   }
   .hero-content{
     position:relative;z-index:5;width:100%;
-    padding-top:clamp(120px,18vw,180px);
-    padding-bottom:clamp(52px,7vw,86px);
+    padding-top:clamp(116px,26vw,180px);
+    padding-bottom:clamp(48px,9vw,84px);
   }
-  .kicker{
-    display:inline-flex;align-items:center;gap:10px;
-    color:rgba(255,255,255,.78)!important;-webkit-text-fill-color:rgba(255,255,255,.78);
-    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:22px;
-  }
-  .kicker::before{content:'';width:26px;height:1px;background:var(--coral)}
-  .hero h1{color:#fff!important;-webkit-text-fill-color:#fff;max-width:15ch;margin-bottom:26px}
-  .hero h1 span{color:var(--coral);-webkit-text-fill-color:var(--coral)}
-  .hero-lead{
-    color:rgba(255,255,255,.80)!important;-webkit-text-fill-color:rgba(255,255,255,.80);
-    font-size:clamp(17px,1.6vw,19.5px);max-width:46ch;margin-bottom:34px;
-  }
-  .hero-actions{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-bottom:38px}
-  .hero-tags{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+  .hero .eyebrow{color:rgba(255,255,255,.74);margin-bottom:20px}
+  .hero h1{color:#fff;max-width:14ch;margin-bottom:22px}
+  .hero h1 em{font-style:normal;color:var(--coral)}
+  .hero-lead{color:rgba(255,255,255,.78);max-width:44ch;margin-bottom:32px}
+  .hero-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+  .hero-tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
   .hero-tags .lbl{
-    color:rgba(255,255,255,.46)!important;-webkit-text-fill-color:rgba(255,255,255,.46);
-    font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-right:4px;
+    font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.42);margin-right:4px;
   }
   @media(max-width:640px){
     .hero{min-height:100svh}
-    .hero-actions{gap:18px;margin-bottom:30px}
-    .hero-tags .lbl{width:100%;margin-bottom:2px}
+    .hero-actions{gap:20px;margin-bottom:28px}
+    .hero-tags .lbl{width:100%;margin:0 0 2px}
   }
 
-  .subline{padding-top:clamp(48px,7vw,72px)}
-  .subline p{font-size:clamp(21px,3vw,34px);font-weight:500;letter-spacing:-.028em;line-height:1.24;max-width:26ch}
-  .subline b{color:var(--violet);-webkit-text-fill-color:var(--violet);font-weight:600}
-
   /* ---------- SECTIONS ---------- */
-  section{padding:var(--sec) 0}
+  main section{padding-block:var(--sec)}
   .sec-soft{background:var(--soft)}
-  .lead{font-size:19.5px;color:var(--ink-70);max-width:58ch}
+  .sec-head{max-width:22ch}
+  .sec-head + .lead{margin-top:16px}
 
-  .prose p{color:var(--ink-70);margin-bottom:18px}
-  .prose p.res{color:var(--ink);margin-top:24px}
-  .prose p.res b{font-weight:700;color:var(--coral);-webkit-text-fill-color:var(--coral)}
+  .subline{padding-block:clamp(52px,10vw,78px) 0}
+  .subline p{
+    font-size:clamp(1.375rem,0.97rem + 1.7vw,2.125rem);/* 22 → 34 */
+    font-weight:500;letter-spacing:-.028em;line-height:1.26;max-width:24ch;
+  }
+  .subline b{color:var(--violet);font-weight:600}
 
-  .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center;margin-top:clamp(32px,4vw,48px)}
+  .prose p{color:var(--ink-70);margin-bottom:16px;max-width:60ch}
+  .prose p:last-child{margin-bottom:0}
+  .prose .res{color:var(--ink);margin-top:22px}
+  .prose .res b{font-weight:700;color:var(--coral)}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center;margin-top:clamp(30px,4vw,44px)}
   @media(max-width:900px){.duo{grid-template-columns:1fr}}
+
   .shot{border-radius:var(--r);overflow:hidden;background:linear-gradient(140deg,#2C2270,#3A1E52)}
   .shot img{width:100%;height:100%;object-fit:cover}
   .shot-4x5{aspect-ratio:4/5}
   @media(max-width:900px){.shot-4x5{aspect-ratio:16/11}}
 
-  /* ---------- RAIL (scroll-snap mobile) ---------- */
-  .rail{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(32px,4vw,48px)}
+  /* ---------- RAIL ---------- */
+  .rail{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(30px,4vw,44px)}
   @media(max-width:1000px){
     .rail{
-      display:flex;gap:14px;overflow-x:auto;
+      display:flex;gap:12px;overflow-x:auto;
       scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-      /* on déborde jusqu'au bord, mais on réinjecte la gouttière en padding */
-      margin-left:calc(var(--pad) * -1);margin-right:calc(var(--pad) * -1);
+      margin-inline:calc(var(--pad) * -1);
       padding:4px var(--pad) 14px;scroll-padding-left:var(--pad);scrollbar-width:none;
     }
     .rail::-webkit-scrollbar{display:none}
-    .rail > *{flex:0 0 min(84%,420px);scroll-snap-align:center}
+    .rail > *{flex:0 0 min(85%,400px);scroll-snap-align:center}
   }
   .rail-hint{
-    display:none;margin-top:6px;font-size:12.5px;letter-spacing:.12em;
+    display:none;margin-top:8px;font-size:var(--t-xs);letter-spacing:.12em;
     text-transform:uppercase;font-weight:700;color:var(--ink-45);
   }
   @media(max-width:1000px){.rail-hint{display:block}}
 
-  /* photo cards */
   .pcard{
     position:relative;border-radius:var(--r);overflow:hidden;
-    min-height:520px;display:flex;align-items:flex-end;
+    min-height:480px;display:flex;align-items:flex-end;
     background:linear-gradient(150deg,#2C2270,#3A1E52);
   }
-  @media(max-width:1000px){.pcard{min-height:440px}}
-  .pcard img{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;
-    transition:transform .8s var(--ease);
-  }
-  .pcard:hover img{transform:scale(1.045)}
+  @media(max-width:1000px){.pcard{min-height:420px}}
+  .pcard > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;transition:transform .7s var(--ease)}
+  .pcard:hover > img{transform:scale(1.04)}
   .pcard-panel{
-    position:relative;z-index:3;margin:14px;padding:26px 24px 24px;
-    border-radius:var(--r-sm);width:calc(100% - 28px);
-    background:rgba(23,18,63,.44);
-    border:1px solid rgba(255,255,255,.14);
-    backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%);
+    position:relative;z-index:3;margin:12px;padding:24px 22px;
+    border-radius:var(--r-sm);width:calc(100% - 24px);
+    background:rgba(23,18,63,.5);border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   }
-  .pcard-panel h3,.pcard-panel p{color:#fff!important;-webkit-text-fill-color:#fff}
-  .pcard-panel h3{margin-bottom:11px}
-  .pcard-panel p{font-size:16px;color:rgba(255,255,255,.87)!important;-webkit-text-fill-color:rgba(255,255,255,.87)}
-  .pcard-panel .out{margin-top:18px;font-size:14.5px;font-weight:700;color:var(--coral)!important;-webkit-text-fill-color:var(--coral)}
+  .pcard-panel h3{color:#fff;margin-bottom:10px}
+  .pcard-panel p{color:rgba(255,255,255,.84);font-size:var(--t-sm);line-height:1.55}
+  .pcard-panel .out{
+    margin-top:16px;font-size:var(--t-xs);font-weight:700;color:var(--coral);
+    letter-spacing:.005em;
+  }
 
   /* ---------- BENTO ---------- */
-  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:clamp(32px,4vw,48px)}
+  .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:clamp(30px,4vw,44px)}
   .b{
-    background:var(--soft);border-radius:var(--r);padding:clamp(24px,2.4vw,32px);
-    min-height:246px;display:flex;flex-direction:column;justify-content:flex-end;
-    transition:transform .4s var(--ease);
+    background:var(--soft);border-radius:var(--r);padding:clamp(22px,2.2vw,30px);
+    min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;
   }
-  .b:hover{transform:translateY(-3px)}
-  .b h4{margin-bottom:10px}
-  .b p{color:var(--ink-70);font-size:16.5px}
+  .b h3{margin-bottom:8px}
+  .b p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55;max-width:42ch}
   .b-3{grid-column:span 3}.b-2{grid-column:span 2}
-  .b-ink{background:linear-gradient(150deg,var(--violet),#2C2270)!important}
-  .b-ink h4,.b-ink p{color:#fff!important;-webkit-text-fill-color:#fff}
-  .b-ink p{color:rgba(255,255,255,.84)!important;-webkit-text-fill-color:rgba(255,255,255,.84)}
-  .b-ink .big{font-size:clamp(44px,4.6vw,58px);font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:12px;color:#fff!important;-webkit-text-fill-color:#fff}
-  .b-coral{background:linear-gradient(150deg,var(--coral),#E2432C)!important}
-  .b-coral h4,.b-coral p{color:#fff!important;-webkit-text-fill-color:#fff}
-  .b-coral p{color:rgba(255,255,255,.9)!important;-webkit-text-fill-color:rgba(255,255,255,.9)}
+  .b-ink{background:linear-gradient(150deg,var(--violet),#2C2270)}
+  .b-ink h3,.b-ink .big{color:#fff}
+  .b-ink p{color:rgba(255,255,255,.82)}
+  .b-ink .big{
+    font-size:clamp(2.5rem,1.9rem + 2.6vw,3.5rem);font-weight:700;
+    letter-spacing:-.05em;line-height:1;margin-bottom:10px;
+  }
+  .b-coral{background:var(--coral)}
+  .b-coral h3{color:#fff}
+  .b-coral p{color:rgba(255,255,255,.9)}
   .b-photo{padding:0;overflow:hidden;position:relative;background:linear-gradient(150deg,#2C2270,#3A1E52)}
-  .b-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .8s var(--ease)}
-  .b-photo:hover img{transform:scale(1.05)}
+  .b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+  .b-photo:hover img{transform:scale(1.04)}
   @media(max-width:1000px){
-    .bento{grid-template-columns:1fr;gap:14px}
+    .bento{grid-template-columns:1fr;gap:12px}
     .b-3,.b-2{grid-column:span 1}
-    .b-photo{min-height:230px}
+    /* en colonne, l'alignement bas creusait un vide en haut de chaque tuile */
+    .b{min-height:0;justify-content:flex-start}
+    .b-photo{min-height:220px}
   }
 
-  /* ---------- MANIFESTO ---------- */
-  .mani{position:relative;border-radius:var(--r);overflow:hidden;min-height:440px;display:flex;align-items:center;background:linear-gradient(140deg,#2C2270,#3A1E52)}
-  .mani img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-  .mani::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(23,18,63,.92),rgba(91,69,224,.36))}
-  .mani-in{position:relative;z-index:4;padding:clamp(30px,6vw,74px);max-width:760px}
-  .mani p{font-size:clamp(25px,3.9vw,46px);line-height:1.12;letter-spacing:-.035em;font-weight:600;color:#fff!important;-webkit-text-fill-color:#fff;max-width:19ch}
-  .mani small{display:block;margin-top:24px;font-size:15.5px;font-weight:400;letter-spacing:0;color:rgba(255,255,255,.72)!important;-webkit-text-fill-color:rgba(255,255,255,.72)}
+  /* ---------- MANIFESTE ---------- */
+  .mani{position:relative;border-radius:var(--r);overflow:hidden;min-height:400px;display:flex;align-items:center;background:linear-gradient(140deg,#2C2270,#3A1E52)}
+  .mani img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+  .mani::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(23,18,63,.93),rgba(91,69,224,.34))}
+  .mani blockquote{position:relative;z-index:4;padding:clamp(28px,6vw,68px);max-width:740px}
+  .mani p{
+    font-size:clamp(1.5rem,0.95rem + 2.3vw,2.75rem);/* 24 → 44 */
+    line-height:1.16;letter-spacing:-.032em;font-weight:600;color:#fff;max-width:18ch;
+  }
+  .mani footer{
+    display:block;margin-top:20px;padding:0;
+    font-size:var(--t-sm);font-weight:400;line-height:1.5;
+    letter-spacing:0;color:rgba(255,255,255,.68);
+  }
 
   /* ---------- TERRAINS ---------- */
-  .terr .shot{aspect-ratio:5/4;margin-bottom:16px}
-  .terr h4{margin-bottom:7px}
-  .terr p{color:var(--ink-70);font-size:16.5px}
+  .terr .shot{aspect-ratio:5/4;margin-bottom:14px}
+  .terr h3{margin-bottom:6px}
+  .terr p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55}
 
-  /* ---------- STEPS ---------- */
-  .step{background:#fff;border-radius:var(--r);padding:clamp(26px,2.4vw,32px) clamp(24px,2.2vw,28px);border:1px solid var(--line)}
-  .sec-soft .step{background:#fff;border:none}
+  /* ---------- MÉTHODE ---------- */
+  .step{background:#fff;border-radius:var(--r);padding:clamp(24px,2.3vw,30px);border:1px solid var(--line)}
+  .sec-soft .step{border-color:transparent}
   .step .n{
-    width:42px;height:42px;border-radius:var(--pill);
-    background:linear-gradient(140deg,var(--coral),#E2432C);
-    color:#fff!important;-webkit-text-fill-color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;margin-bottom:20px;
+    width:38px;height:38px;border-radius:var(--pill);background:var(--coral);color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:var(--t-sm);line-height:1;margin-bottom:18px;
   }
-  .step h4{margin-bottom:9px}
-  .step p{color:var(--ink-70);font-size:16.5px}
+  .step h3{margin-bottom:8px}
+  .step p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.55}
 
-  /* ---------- TRUST ---------- */
-  .tlist{list-style:none}
-  .tlist li{padding:20px 0;border-bottom:1px solid var(--line)}
+  /* ---------- CADRE ---------- */
+  .tlist li{padding:18px 0;border-bottom:1px solid var(--line)}
   .tlist li:first-child{border-top:1px solid var(--line)}
-  .tlist b{display:block;font-size:18px;font-weight:700;margin-bottom:4px}
-  .tlist span{color:var(--ink-70);font-size:16.5px}
+  .tlist h3{font-size:var(--t-body);font-weight:700;letter-spacing:-.012em;margin-bottom:3px}
+  .tlist p{color:var(--ink-70);font-size:var(--t-sm);line-height:1.5}
 
   /* ---------- CTA ---------- */
-  .cta{position:relative;border-radius:var(--r);overflow:hidden;min-height:460px;display:flex;align-items:center;background:linear-gradient(140deg,var(--violet),#2C2270)}
-  .cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-  .cta::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(23,18,63,.92),rgba(91,69,224,.42))}
-  .cta-in{position:relative;z-index:4;padding:clamp(30px,6vw,74px);max-width:680px}
-  .cta-in h2{color:#fff!important;-webkit-text-fill-color:#fff;margin-bottom:18px;max-width:16ch}
-  .cta-in p{color:rgba(255,255,255,.86)!important;-webkit-text-fill-color:rgba(255,255,255,.86);margin-bottom:32px;max-width:44ch}
+  .cta{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;display:flex;align-items:center;background:linear-gradient(140deg,var(--violet),#2C2270)}
+  .cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+  .cta::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(23,18,63,.93),rgba(91,69,224,.4))}
+  .cta-in{position:relative;z-index:4;padding:clamp(28px,6vw,68px);max-width:660px}
+  .cta-in h2{color:#fff;margin-bottom:16px;max-width:15ch}
+  .cta-in p{color:rgba(255,255,255,.82);font-size:var(--t-lead);line-height:1.45;letter-spacing:-.012em;margin-bottom:30px;max-width:42ch}
 
-  footer{padding:clamp(40px,5vw,56px) 0 clamp(48px,6vw,72px)}
-  .foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--ink-45);font-size:16px}
-  .foot a{color:var(--ink-70);transition:color .25s}
+  .site-footer{padding-block:clamp(40px,6vw,56px) clamp(44px,7vw,68px)}
+  .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--ink-45);font-size:var(--t-sm)}
+  .foot a{color:var(--ink-70);transition:color .25s var(--ease)}
   .foot a:hover{color:var(--coral)}
-  .foot .r a{margin-left:22px}
-  @media(max-width:520px){.foot .r a{margin-left:0;margin-right:20px}}
+  .foot .r a + a{margin-left:20px}
 
-  /* ---------- REVEAL ---------- */
-  /* un seul geste : montée courte + fondu, décalé par groupe */
+  /* ---------- RÉVÉLATION ---------- */
   [data-rv]{
-    opacity:0;transform:translate3d(0,18px,0);
-    transition:opacity .7s var(--ease),transform .7s var(--ease);
+    opacity:0;transform:translate3d(0,16px,0);
+    transition:opacity .65s var(--ease),transform .65s var(--ease);
     transition-delay:var(--d,0s);
   }
-  [data-rv="img"]{transform:none;clip-path:inset(0 0 0 0 round var(--r))}
-  [data-rv="img"] img{transform:scale(1.06);transition:transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+  [data-rv="img"]{transform:none}
+  [data-rv="img"] img{transform:scale(1.05);transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
   [data-rv].in{opacity:1;transform:none}
   [data-rv="img"].in img{transform:scale(1)}
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
-    [data-rv],[data-rv="img"] img,.hero-bg img{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    [data-rv]{opacity:1!important;transform:none!important}
+    [data-rv="img"] img{transform:none!important}
   }
 </style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://paperstrip.github.io/website/#website",
+      "url":"https://paperstrip.github.io/website/",
+      "name":"Arnaud Herr",
+      "inLanguage":"fr-BE",
+      "publisher":{"@id":"https://paperstrip.github.io/website/#person"}
+    },
+    {
+      "@type":"Person",
+      "@id":"https://paperstrip.github.io/website/#person",
+      "name":"Arnaud Herr",
+      "jobTitle":"Intégrateur de systèmes et d'agents IA",
+      "email":"mailto:arnaudherr@gmail.com",
+      "url":"https://paperstrip.github.io/website/",
+      "sameAs":["https://www.linkedin.com/in/arnaud-herr/"],
+      "address":{"@type":"PostalAddress","addressCountry":"BE"}
+    },
+    {
+      "@type":"ProfessionalService",
+      "@id":"https://paperstrip.github.io/website/#service",
+      "name":"Arnaud Herr — intégration d'agents IA",
+      "description":"Conception et intégration d'agents IA dans les outils métier existants : ERP, CRM, boutique en ligne. Tri documentaire, réponses assistées, ponts entre systèmes.",
+      "url":"https://paperstrip.github.io/website/",
+      "email":"mailto:arnaudherr@gmail.com",
+      "image":"https://paperstrip.github.io/website/assets/og.jpg",
+      "provider":{"@id":"https://paperstrip.github.io/website/#person"},
+      "areaServed":{"@type":"Country","name":"Belgique"},
+      "availableLanguage":["fr"],
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Domaines d'intervention",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Tri documentaire automatisé","description":"Un agent lit les documents entrants, les qualifie et les dépose au bon endroit dans l'ERP."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Réponses assistées","description":"Proposition de réponse générée depuis la base de connaissance interne, validée par un humain."}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Ponts entre systèmes","description":"Synchronisation entre boutique en ligne et outil de gestion : stocks, prix, commandes."}}
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1900&q=80" fetchpriority="high" referrerpolicy="no-referrer" alt="">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <div class="nav-in">
+      <a href="#main" class="logo">Arnaud Herr<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="#constat">Le constat</a>
+          <a href="#faire">Ce que je construis</a>
+          <a href="#methode">Méthode</a>
+        </nav>
+        <a href="#contact" class="btn btn-sm">Parlons-en</a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="m-menu" id="mobileMenu" aria-label="Navigation mobile" hidden>
+      <a href="#constat">Le constat</a>
+      <a href="#faire">Ce que je construis</a>
+      <a href="#methode">Méthode</a>
+      <a href="#contact">Parlons-en</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1900&q=80"
+           width="1900" height="1267" fetchpriority="high" decoding="async" referrerpolicy="no-referrer" alt="">
+    </div>
+
+    <div class="hero-content">
+      <div class="wrap">
+        <p class="eyebrow" data-rv>Conçu pour les réalités terrain</p>
+        <h1 id="hero-title" data-rv>Vos outils savent déjà tout. Ils ne savent pas encore <em>agir</em>.</h1>
+        <p class="lead hero-lead" data-rv>Des agents IA qui s'installent dans votre ERP, votre CRM, votre boutique — et qui travaillent sur votre donnée réelle.</p>
+
+        <div class="hero-actions" data-rv>
+          <a href="#contact" class="btn">
+            Décrire une tâche répétitive
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#faire" class="link-u">Voir ce que je construis</a>
+        </div>
+
+        <div class="hero-tags" data-rv>
+          <span class="lbl">Cas d'usage</span>
+          <a href="#faire" class="tag">Tri documentaire</a>
+          <a href="#faire" class="tag">Réponses assistées</a>
+          <a href="#faire" class="tag">Ponts entre systèmes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap subline">
+    <p data-rv>Des agents IA qui vivent <b>à l'intérieur</b> de votre ERP, de votre CRM, de votre boutique en ligne. Branchés sur votre donnée réelle.</p>
   </div>
 
-  <div class="navbar" id="navbar">
+  <section id="constat" aria-labelledby="constat-title">
     <div class="wrap">
-      <div class="nav-in">
-        <a href="#" class="logo">Arnaud Herr<em>.</em></a>
-        <div class="nav-right">
-          <div class="nav-links">
-            <a href="#constat">Le constat</a>
-            <a href="#faire">Ce que je construis</a>
-            <a href="#methode">Méthode</a>
+      <h2 class="sec-head" id="constat-title" data-rv>Libérer vos équipes du travail qui ne se facture pas</h2>
+      <div class="duo">
+        <div class="prose" data-rv>
+          <p>La plupart des entreprises ne manquent pas d'outils. Elles en ont même parfois trop. Parce que certains demandent plus d'efforts qu'ils n'en font gagner, et qu'ils ne se parlent pas entre eux.</p>
+          <p>Les informations se dispersent entre les logiciels. Des documents arrivent, sont ouverts, triés, classés un par un. Des réponses sont réécrites de zéro alors que le cas s'est déjà présenté cent fois. Des stocks et des prix sont ressaisis à deux endroits.</p>
+          <p class="res"><b>Le résultat :</b> des équipes compétentes qui passent une part significative de leur semaine sur du travail que personne ne facture, et que tout le monde paie.</p>
+        </div>
+        <div class="shot shot-4x5" data-rv="img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80"
+               width="1000" height="1250" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Réunion d'équipe autour d'un tableau de suivi dans un bureau">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec-soft" id="faire" aria-labelledby="faire-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="faire-title" data-rv>Des agents qui s'installent dans ce qui tourne déjà</h2>
+      <p class="lead" data-rv>L'IA n'a d'intérêt qu'à deux conditions : qu'elle soit nourrie de la donnée réelle de l'entreprise, et qu'elle vive dans les outils que les équipes ouvrent déjà. Sinon c'est une démonstration réussie que plus personne ne lance au bout de trois semaines.</p>
+      <p class="rail-hint">← Faites glisser</p>
+
+      <ul class="rail">
+        <li class="pcard" data-rv>
+          <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=900&q=80"
+               width="900" height="1200" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Dossiers et documents papier classés dans des casiers de bureau">
+          <div class="pcard-panel">
+            <h3>Tri documentaire</h3>
+            <p>Un agent lit les documents entrants, comprend de quoi il s'agit et à quoi ils se rattachent, puis les dépose au bon endroit dans l'ERP. Ce qui est ambigu remonte à un humain.</p>
+            <p class="out">Le classement manuel sort du quotidien</p>
           </div>
-          <a href="#contact" class="btn btn-sm">Parlons-en</a>
-          <div class="burger"><i></i><i></i></div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </li>
 
-  <div class="hero-content">
-    <div class="wrap">
-      <div class="kicker" data-rv>Conçu pour les réalités terrain</div>
-      <h1 data-rv>Vos outils savent déjà tout. Ils ne savent pas encore <span>agir</span>.</h1>
-      <p class="hero-lead" data-rv>Des agents IA qui s'installent dans votre ERP, votre CRM, votre boutique — et qui travaillent sur votre donnée réelle.</p>
+        <li class="pcard" data-rv>
+          <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=900&q=80"
+               width="900" height="1200" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Deux personnes travaillant ensemble devant un écran d'ordinateur">
+          <div class="pcard-panel">
+            <h3>Réponses assistées</h3>
+            <p>Une recherche sur la base de connaissance interne prépare une proposition de réponse dans l'outil du conseiller. Il valide, corrige, envoie. Les données sensibles sont anonymisées en amont.</p>
+            <p class="out">Un premier jet en secondes, pas en minutes</p>
+          </div>
+        </li>
 
-      <div class="hero-actions" data-rv>
-        <a href="#contact" class="btn">
-          Décrire une tâche répétitive
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h10M9 4.5l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#faire" class="link-ghost">Voir ce que je construis</a>
-      </div>
-
-      <div class="hero-tags" data-rv>
-        <span class="lbl">Cas d'usage</span>
-        <a href="#faire" class="tag">Tri documentaire</a>
-        <a href="#faire" class="tag">Réponses assistées</a>
-        <a href="#faire" class="tag">Ponts entre systèmes</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="wrap subline">
-  <p data-rv>Des agents IA qui vivent <b>à l'intérieur</b> de votre ERP, de votre CRM, de votre boutique en ligne. Branchés sur votre donnée réelle.</p>
-</div>
-
-<!-- CONSTAT -->
-<section id="constat">
-  <div class="wrap">
-    <h2 data-rv style="max-width:19ch">Libérer vos équipes du travail qui ne se facture pas</h2>
-    <div class="duo">
-      <div class="prose" data-rv>
-        <p>La plupart des entreprises ne manquent pas d'outils. Elles en ont même parfois trop. Parce que certains demandent plus d'efforts qu'ils n'en font gagner, et qu'ils ne se parlent pas entre eux.</p>
-        <p>Les informations se dispersent entre les logiciels. Des documents arrivent, sont ouverts, triés, classés un par un. Des réponses sont réécrites de zéro alors que le cas s'est déjà présenté cent fois. Des stocks et des prix sont ressaisis à deux endroits.</p>
-        <p class="res"><b>Le résultat :</b> des équipes compétentes qui passent une part significative de leur semaine sur du travail que personne ne facture, et que tout le monde paie.</p>
-      </div>
-      <div class="shot shot-4x5" data-rv="img">
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CE QUE JE CONSTRUIS -->
-<section class="sec-soft" id="faire">
-  <div class="wrap">
-    <h2 data-rv style="max-width:20ch">Des agents qui s'installent dans ce qui tourne déjà</h2>
-    <p class="lead" data-rv style="margin-top:20px">L'IA n'a d'intérêt qu'à deux conditions : qu'elle soit nourrie de la donnée réelle de l'entreprise, et qu'elle vive dans les outils que les équipes ouvrent déjà. Sinon c'est une démonstration réussie que plus personne ne lance au bout de trois semaines.</p>
-    <div class="rail-hint">← Faites glisser</div>
-
-    <div class="rail">
-      <div class="pcard" data-rv>
-        <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=900&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-        <div class="pcard-panel">
-          <h3>Tri documentaire</h3>
-          <p>Un agent lit les documents entrants, comprend de quoi il s'agit et à quoi ils se rattachent, puis les dépose au bon endroit dans l'ERP. Ce qui est ambigu remonte à un humain.</p>
-          <div class="out">Le classement manuel sort du quotidien</div>
-        </div>
-      </div>
-
-      <div class="pcard" data-rv>
-        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=900&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-        <div class="pcard-panel">
-          <h3>Réponses assistées</h3>
-          <p>Une recherche sur la base de connaissance interne prépare une proposition de réponse dans l'outil du conseiller. Il valide, corrige, envoie. Les données sensibles sont anonymisées en amont.</p>
-          <div class="out">Un premier jet en secondes, pas en minutes</div>
-        </div>
-      </div>
-
-      <div class="pcard" data-rv>
-        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-        <div class="pcard-panel">
-          <h3>Ponts entre systèmes</h3>
-          <p>Entre la boutique et l'outil de gestion : stocks multi-entrepôts, grilles de prix différenciées, commandes. Une architecture qui encaisse les pannes au lieu de les propager.</p>
-          <div class="out">Fin de la double saisie et des écarts</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CE QUE ÇA CHANGE -->
-<section>
-  <div class="wrap">
-    <h2 data-rv style="max-width:17ch">Ce que change une intelligence bien placée</h2>
-
-    <div class="bento">
-      <div class="b b-3" data-rv>
-        <div><h4>L'outil ne change pas</h4>
-        <p>Vos équipes continuent d'ouvrir le logiciel qu'elles connaissent. L'intelligence arrive dedans, pas à côté. Aucune formation à un nouvel écran.</p></div>
-      </div>
-
-      <div class="b b-ink b-3" data-rv>
-        <div><div class="big">8 ans</div>
-        <p>à construire des systèmes qui tournent encore aujourd'hui, en production, chez des gens qui comptent dessus.</p></div>
-      </div>
-
-      <div class="b b-photo b-2" data-rv="img">
-        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-      </div>
-
-      <div class="b b-coral b-2" data-rv>
-        <div><h4>Rien ne sort sans contrôle</h4>
-        <p>Anonymisation en amont, points d'arrêt humains là où le jugement compte, traçabilité de bout en bout.</p></div>
-      </div>
-
-      <div class="b b-2" data-rv>
-        <div><h4>Vous n'êtes prisonnier de personne</h4>
-        <p>Code documenté, standardisé, reprenable par quelqu'un d'autre que moi. C'est une condition, pas une option.</p></div>
-      </div>
-
-      <div class="b b-photo b-3" data-rv="img">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-      </div>
-
-      <div class="b b-3" data-rv>
-        <div><h4>On commence petit, exprès</h4>
-        <p>Un seul cas d'usage mis en production vite, jugé en conditions réelles. Le reste suit, ou ne suit pas.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MANIFESTO -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="mani" data-rv>
-      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-      <div class="mani-in">
-        <p>La technologie n'est pas le sujet. Ce qui compte, c'est ce qu'elle enlève du quotidien de quelqu'un.</p>
-        <small>Arnaud Herr — huit ans à connecter des systèmes qui n'avaient pas prévu de se parler.</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TERRAINS -->
-<section class="sec-soft">
-  <div class="wrap">
-    <h2 data-rv style="max-width:18ch">Là où ces systèmes tournent</h2>
-    <p class="lead" data-rv style="margin-top:18px">Je ne cite pas de noms. Les mécanismes comptent plus que les logos, et la discrétion fait partie du travail.</p>
-    <div class="rail-hint">← Faites glisser</div>
-
-    <div class="rail terr">
-      <div data-rv>
-        <div class="shot"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80" loading="lazy" referrerpolicy="no-referrer" alt=""></div>
-        <h4>Commerce et distribution</h4>
-        <p>Stocks multi-entrepôts, grilles tarifaires différenciées, commandes synchronisées en temps réel entre la boutique et la gestion.</p>
-      </div>
-      <div data-rv>
-        <div class="shot"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80" loading="lazy" referrerpolicy="no-referrer" alt=""></div>
-        <h4>Relation client</h4>
-        <p>Équipes en première ligne, forts volumes de demandes répétitives, base de connaissance interne rendue exploitable.</p>
-      </div>
-      <div data-rv>
-        <div class="shot"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" loading="lazy" referrerpolicy="no-referrer" alt=""></div>
-        <h4>Administration et back-office</h4>
-        <p>Flux documentaires entrants à traiter, classer, rattacher, sans que personne n'y passe ses matinées.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MÉTHODE -->
-<section id="methode">
-  <div class="wrap">
-    <h2 data-rv style="max-width:18ch">Trois étapes, dont une seule vous engage</h2>
-    <div class="rail">
-      <div class="step" data-rv>
-        <div class="n">1</div>
-        <h4>On regarde le vrai quotidien</h4>
-        <p>Une demi-journée sur place, à côté des gens. Pas un audit de quarante pages : on isole deux ou trois gestes qui reviennent tous les jours, et on met un chiffre dessus.</p>
-      </div>
-      <div class="step" data-rv>
-        <div class="n">2</div>
-        <h4>On prouve sur un périmètre étroit</h4>
-        <p>Un seul cas d'usage, mis en production vite. Vous jugez sur pièce, en conditions réelles, avant d'engager quoi que ce soit de plus large.</p>
-      </div>
-      <div class="step" data-rv>
-        <div class="n">3</div>
-        <h4>On étend ce qui a marché</h4>
-        <p>Ce qui a fait ses preuves se réplique. Le reste, non. Et tout ce qui est construit reste documenté et transmissible.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CADRE -->
-<section class="sec-soft">
-  <div class="wrap">
-    <h2 data-rv style="max-width:19ch">Vos données ne partent pas en promenade</h2>
-    <div class="duo">
-      <ul class="tlist" data-rv>
-        <li><b>Anonymisation en amont</b><span>Les données sensibles sont traitées avant d'entrer dans la chaîne, pas après.</span></li>
-        <li><b>Hébergement maîtrisé</b><span>Le choix de l'infrastructure fait partie de la discussion, pas d'un défaut technique subi.</span></li>
-        <li><b>Contrôle humain aux bons endroits</b><span>Un agent propose, un humain tranche là où le jugement engage l'entreprise.</span></li>
-        <li><b>Code documenté et transmissible</b><span>Ce que je construis doit pouvoir être repris sans moi. Sinon ce n'est pas fini.</span></li>
+        <li class="pcard" data-rv>
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80"
+               width="900" height="1200" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Entrepôt logistique avec rayonnages et préparation de commandes">
+          <div class="pcard-panel">
+            <h3>Ponts entre systèmes</h3>
+            <p>Entre la boutique et l'outil de gestion : stocks multi-entrepôts, grilles de prix différenciées, commandes. Une architecture qui encaisse les pannes au lieu de les propager.</p>
+            <p class="out">Fin de la double saisie et des écarts</p>
+          </div>
+        </li>
       </ul>
-      <div class="shot shot-4x5" data-rv="img">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
+    </div>
+  </section>
+
+  <section aria-labelledby="change-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="change-title" data-rv>Ce que change une intelligence bien placée</h2>
+
+      <div class="bento">
+        <article class="b b-3" data-rv>
+          <div>
+            <h3>L'outil ne change pas</h3>
+            <p>Vos équipes continuent d'ouvrir le logiciel qu'elles connaissent. L'intelligence arrive dedans, pas à côté. Aucune formation à un nouvel écran.</p>
+          </div>
+        </article>
+
+        <article class="b b-ink b-3" data-rv>
+          <div>
+            <p class="big">8 ans</p>
+            <p>à construire des systèmes qui tournent encore aujourd'hui, en production, chez des gens qui comptent dessus.</p>
+          </div>
+        </article>
+
+        <div class="b b-photo b-2" data-rv="img">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+               width="800" height="1000" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Développeur écrivant du code sur un ordinateur portable">
+        </div>
+
+        <article class="b b-coral b-2" data-rv>
+          <div>
+            <h3>Rien ne sort sans contrôle</h3>
+            <p>Anonymisation en amont, points d'arrêt humains là où le jugement compte, traçabilité de bout en bout.</p>
+          </div>
+        </article>
+
+        <article class="b b-2" data-rv>
+          <div>
+            <h3>Vous n'êtes prisonnier de personne</h3>
+            <p>Code documenté, standardisé, reprenable par quelqu'un d'autre que moi. C'est une condition, pas une option.</p>
+          </div>
+        </article>
+
+        <div class="b b-photo b-3" data-rv="img">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+               width="1200" height="800" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Atelier de travail collaboratif autour d'une table">
+        </div>
+
+        <article class="b b-3" data-rv>
+          <div>
+            <h3>On commence petit, exprès</h3>
+            <p>Un seul cas d'usage mis en production vite, jugé en conditions réelles. Le reste suit, ou ne suit pas.</p>
+          </div>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section id="contact">
-  <div class="wrap">
-    <div class="cta" data-rv>
-      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=80" loading="lazy" referrerpolicy="no-referrer" alt="">
-      <div class="cta-in">
-        <h2>Il y a une tâche qui revient tous les jours chez vous</h2>
-        <p>Racontez-la moi. En trente minutes, je vous dis si elle est automatisable, comment, et ce que ça suppose. Y compris quand la réponse est non — ça arrive, et le dire fait partie du travail.</p>
-        <a href="mailto:arnaudherr@gmail.com" class="btn">
-          Écrire un mail
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M3 8.5h10M9 4.5l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+  <section style="padding-block-start:0" aria-label="Manifeste">
+    <div class="wrap">
+      <figure class="mani" data-rv>
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1800&q=80"
+             width="1800" height="1200" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+             alt="Équipe réunie autour d'un poste de travail">
+        <blockquote>
+          <p>La technologie n'est pas le sujet. Ce qui compte, c'est ce qu'elle enlève du quotidien de quelqu'un.</p>
+          <footer>Arnaud Herr — huit ans à connecter des systèmes qui n'avaient pas prévu de se parler.</footer>
+        </blockquote>
+      </figure>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="terrains-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="terrains-title" data-rv>Là où ces systèmes tournent</h2>
+      <p class="lead" data-rv>Je ne cite pas de noms. Les mécanismes comptent plus que les logos, et la discrétion fait partie du travail.</p>
+      <p class="rail-hint">← Faites glisser</p>
+
+      <ul class="rail terr">
+        <li data-rv>
+          <div class="shot">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80"
+                 width="900" height="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 alt="Rayonnages d'un point de vente de distribution">
+          </div>
+          <h3>Commerce et distribution</h3>
+          <p>Stocks multi-entrepôts, grilles tarifaires différenciées, commandes synchronisées en temps réel entre la boutique et la gestion.</p>
+        </li>
+        <li data-rv>
+          <div class="shot">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80"
+                 width="900" height="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 alt="Conseillère en relation client à son poste de travail">
+          </div>
+          <h3>Relation client</h3>
+          <p>Équipes en première ligne, forts volumes de demandes répétitives, base de connaissance interne rendue exploitable.</p>
+        </li>
+        <li data-rv>
+          <div class="shot">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"
+                 width="900" height="720" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                 alt="Bureau administratif avec dossiers et poste informatique">
+          </div>
+          <h3>Administration et back-office</h3>
+          <p>Flux documentaires entrants à traiter, classer, rattacher, sans que personne n'y passe ses matinées.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="methode" aria-labelledby="methode-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="methode-title" data-rv>Trois étapes, dont une seule vous engage</h2>
+      <ol class="rail">
+        <li class="step" data-rv>
+          <p class="n" aria-hidden="true">1</p>
+          <h3>On regarde le vrai quotidien</h3>
+          <p>Une demi-journée sur place, à côté des gens. Pas un audit de quarante pages : on isole deux ou trois gestes qui reviennent tous les jours, et on met un chiffre dessus.</p>
+        </li>
+        <li class="step" data-rv>
+          <p class="n" aria-hidden="true">2</p>
+          <h3>On prouve sur un périmètre étroit</h3>
+          <p>Un seul cas d'usage, mis en production vite. Vous jugez sur pièce, en conditions réelles, avant d'engager quoi que ce soit de plus large.</p>
+        </li>
+        <li class="step" data-rv>
+          <p class="n" aria-hidden="true">3</p>
+          <h3>On étend ce qui a marché</h3>
+          <p>Ce qui a fait ses preuves se réplique. Le reste, non. Et tout ce qui est construit reste documenté et transmissible.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec-soft" aria-labelledby="cadre-title">
+    <div class="wrap">
+      <h2 class="sec-head" id="cadre-title" data-rv>Vos données ne partent pas en promenade</h2>
+      <div class="duo">
+        <ul class="tlist" data-rv>
+          <li><h3>Anonymisation en amont</h3><p>Les données sensibles sont traitées avant d'entrer dans la chaîne, pas après.</p></li>
+          <li><h3>Hébergement maîtrisé</h3><p>Le choix de l'infrastructure fait partie de la discussion, pas d'un défaut technique subi.</p></li>
+          <li><h3>Contrôle humain aux bons endroits</h3><p>Un agent propose, un humain tranche là où le jugement engage l'entreprise.</p></li>
+          <li><h3>Code documenté et transmissible</h3><p>Ce que je construis doit pouvoir être repris sans moi. Sinon ce n'est pas fini.</p></li>
+        </ul>
+        <div class="shot shot-4x5" data-rv="img">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80"
+               width="1000" height="1250" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+               alt="Baies de serveurs dans une salle d'hébergement">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="cta" data-rv>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=80"
+             width="1800" height="1200" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+             alt="Équipe en réunion de travail autour d'ordinateurs portables">
+        <div class="cta-in">
+          <h2 id="contact-title">Il y a une tâche qui revient tous les jours chez vous</h2>
+          <p>Racontez-la moi. En trente minutes, je vous dis si elle est automatisable, comment, et ce que ça suppose. Y compris quand la réponse est non — ça arrive, et le dire fait partie du travail.</p>
+          <a href="mailto:arnaudherr@gmail.com" class="btn">
+            Écrire un mail
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
   <div class="wrap foot">
-    <span>Arnaud Herr — Belgique</span>
-    <div class="r">
+    <p>Arnaud Herr — Belgique</p>
+    <p class="r">
       <a href="mailto:arnaudherr@gmail.com">arnaudherr@gmail.com</a>
-      <a href="https://www.linkedin.com/in/arnaud-herr/">LinkedIn</a>
-    </div>
+      <a href="https://www.linkedin.com/in/arnaud-herr/" rel="noopener">LinkedIn</a>
+    </p>
   </div>
 </footer>
 
 <script>
 (function(){
+  'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var items = Array.prototype.slice.call(document.querySelectorAll('[data-rv]'));
 
-  if(reduce || !('IntersectionObserver' in window)){
+  if(!reduce && 'IntersectionObserver' in window){
+    /* décalage calculé entre voisins directs : deux blocs sans rapport
+       ne portent plus un délai hérité d'un index global */
+    items.forEach(function(el){
+      var sibs = Array.prototype.filter.call(el.parentNode.children, function(n){
+        return n.hasAttribute && n.hasAttribute('data-rv');
+      });
+      el.style.setProperty('--d', Math.min(sibs.indexOf(el), 3) * 0.08 + 's');
+    });
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+
+    /* le hero s'anime à l'arrivée, pas au scroll */
+    document.querySelectorAll('.hero-content [data-rv]').forEach(function(el, i){
+      el.style.setProperty('--d', (0.1 + i * 0.08) + 's');
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.classList.add('in'); }); });
+    });
+
+    items.forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
+  } else {
     items.forEach(function(el){ el.classList.add('in'); });
-    return;
   }
 
-  /* le décalage se calcule par voisins directs, pas par index global :
-     des blocs sans rapport ne portent plus de délai arbitraire */
-  items.forEach(function(el){
-    var sibs = Array.prototype.filter.call(el.parentNode.children, function(n){ return n.hasAttribute && n.hasAttribute('data-rv'); });
-    var i = sibs.indexOf(el);
-    el.style.setProperty('--d', Math.min(i, 3) * 0.09 + 's');
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-
-  /* le hero s'anime à l'arrivée, pas au scroll */
-  var hero = document.querySelectorAll('.hero-content [data-rv]');
-  hero.forEach(function(el, i){
-    el.style.setProperty('--d', (0.12 + i * 0.09) + 's');
-    requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.classList.add('in'); }); });
-  });
-
-  items.forEach(function(el){ if(!el.classList.contains('in')) io.observe(el); });
-
-  /* nav : fond dense dès qu'elle quitte le hero */
-  var nav = document.getElementById('navbar'), ticking = false;
+  /* en-tête : fond dense dès la sortie du hero */
+  var header = document.getElementById('siteHeader'), ticking = false;
   function onScroll(){
     if(ticking) return;
     ticking = true;
     requestAnimationFrame(function(){
-      nav.classList.toggle('is-stuck', window.scrollY > 80);
+      header.classList.toggle('is-stuck', window.scrollY > 70);
       ticking = false;
     });
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+
+  /* menu mobile */
+  var burger = document.getElementById('burger'), menu = document.getElementById('mobileMenu');
+  function setMenu(open){
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    menu.hidden = !open;
+  }
+  burger.addEventListener('click', function(){
+    setMenu(burger.getAttribute('aria-expanded') !== 'true');
+  });
+  menu.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true'){ setMenu(false); burger.focus(); }
+  });
 })();
 </script>
 
