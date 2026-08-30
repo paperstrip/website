@@ -15,7 +15,7 @@ faut décider, vérifier et couper.
 
 - [Agents IA branchés sur vos outils métier](https://paperstrip.github.io/website/) : tri documentaire automatisé, réponses client assistées, ponts entre boutique en ligne et outil de gestion. L'intelligence arrive dans le logiciel que les équipes ouvrent déjà, sans nouvel écran à apprendre.
 - [Sites web sur mesure conçus avec l'IA](https://paperstrip.github.io/website/sites-web-ia/) : statiques ou WordPress. Rendu non générique, structure HTML sémantique, Core Web Vitals tenus, référencement naturel et GEO travaillés.
-- [Logiciels métier sur mesure](https://paperstrip.github.io/website/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités, des tests là où une erreur coûte de l'argent, et un code reprenable par un autre prestataire.
+- [Logiciels métier sur mesure](https://paperstrip.github.io/website/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
 - [Sous-traitance technique pour agences](https://paperstrip.github.io/website/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, code cédé et documenté, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/website/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
 - [Contact](https://paperstrip.github.io/website/contact/) : arnaudherr@gmail.com, 0477 67 29 28 (+32 477 67 29 28). Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement.
@@ -32,14 +32,15 @@ faut décider, vérifier et couper.
 
 ## Ce que je refuse
 
-- Livrer un code que personne d'autre que moi ne peut reprendre. C'est une condition posée au départ.
+- Lancer une automatisation sans avoir chiffré au préalable le temps réellement passé sur le geste. Sans point de départ, personne ne peut dire si ça a servi.
 - Faire passer un logiciel sur mesure quand un produit du marché fait le travail pour moins cher.
 - Promettre un rang en GEO : les moteurs génératifs ne publient pas de position, on peut réunir les conditions d'être cité, pas garantir la citation.
 - Laisser croire que je suis prestataire labellisé Chèques Entreprise : je ne le suis pas. Si votre budget en dépend, je vous oriente vers quelqu'un d'agréé.
 
 ## Cadre sur les données
 
-Anonymisation des données personnelles avant traitement, hébergement et
-fournisseur de modèle discutés dès le départ, validation humaine partout où la
-décision engage l'entreprise vis-à-vis d'un client, traçabilité de bout en bout.
-Exigences RGPD prises comme point de départ.
+Anonymisation des données personnelles avant traitement. Hébergement applicatif
+sur mes serveurs en Belgique quand le projet en demande un. Choix du fournisseur
+de modèle d'IA décidé avec le client, avant de commencer. Validation humaine
+partout où la décision engage l'entreprise vis-à-vis d'un client. Traçabilité de
+bout en bout. Exigences RGPD prises comme point de départ.
