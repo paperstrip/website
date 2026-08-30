@@ -15,7 +15,7 @@ sitemap.xml           5 URL
 assets/site.css       styles partagés par toutes les pages
 assets/site.js        révélation au scroll, en-tête au scroll, menu mobile
 assets/og.jpg         image de partage Open Graph (1200×630)
-assets/fonts/         Plus Jakarta Sans (variable, woff2, latin + latin-ext)
+assets/fonts/         Geist (variable, woff2, latin + latin-ext)
 .nojekyll             désactive le traitement Jekyll de GitHub Pages
 ```
 

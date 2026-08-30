@@ -1,51 +1,76 @@
-/* ---------- FONTES AUTO-HÉBERGÉES (variable, 2 sous-ensembles) ---------- */
+/* ---------- FONTE ----------
+   La référence utilise Aeonik, police sous licence commerciale. Geist est la
+   néo-grotesque libre la plus proche : hauteur d'œil comparable, terminaisons
+   droites, contraste équivalent. */
   @font-face{
-    font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;
-    src:url(fonts/pjs-latin.woff2) format('woff2');
+    font-family:'Geist';font-style:normal;font-weight:300 700;font-display:swap;
+    src:url(fonts/geist-latin.woff2) format('woff2');
     unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
   }
   @font-face{
-    font-family:'Plus Jakarta Sans';font-style:normal;font-weight:200 800;font-display:swap;
-    src:url(fonts/pjs-latin-ext.woff2) format('woff2');
+    font-family:'Geist';font-style:normal;font-weight:300 700;font-display:swap;
+    src:url(fonts/geist-latin-ext.woff2) format('woff2');
     unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
   }
 
   :root{
     color-scheme:light only;
-    /* valeurs relevées au pixel sur la référence : corail #EF7E5D,
-       indigo plein #191249, carte de verre #312A5B, fond de page blanc. */
-    --soft:#F5F4F7;      /* gris très clair, sans dominante */
-    --ink:#1B1546;       /* texte et blocs sombres */
-    --ink-deep:#191249;  /* indigo plein */
-    --ink-70:rgba(27,21,70,.74);
-    --ink-45:rgba(27,21,70,.5);
+
+    /* Palette relevée dans la feuille de style de la référence */
+    --ink:#1A1249;
     --coral:#EF7E5D;
-    --coral-d:#E3684A;  /* survol */
-    --coral-t:#B8492A;  /* corail lisible en petit corps sur fond clair */
-    --violet:#5B45E0;    /* réservé à l'accent typographique */
-    --line:rgba(27,21,70,.12);
+    --coral-d:#1A1249;      /* la référence remplit le bouton d'encre au survol */
+    --coral-t:#B8492A;      /* corail lisible en petit corps sur fond clair */
+    --lavender:#B3AAE5;
+    --titan:#EBE8FF;
+    --soft:#FDF2EF;         /* rosé très clair */
+    --chablis:#FFF5F5;      /* rosé quasi blanc, fond de section */
+    --ink-70:rgba(26,18,73,.7);
+    --ink-45:rgba(26,18,73,.6);
+    --line:rgba(26,18,73,.1);
+    --line-2:rgba(26,18,73,.2);
 
-    /* rayons resserrés : les grands blocs se calment, seules les commandes restent en pilule */
-    --r:10px;      /* blocs — mesuré ~9px sur la référence */
-    --r-sm:8px;    /* panneaux imbriqués */
-    --r-bar:16px;  /* barre de navigation et menu mobile */
-    --r-btn:16px;  /* boutons — mesuré ~17px sur la référence, pas une pilule */
-    --pill:100px;  /* réservé aux tags et aux pastilles rondes */
+    /* Rayons : 14px pour les blocs, 22px pour les boutons */
+    --r:14px;
+    --r-sm:10px;
+    --r-bar:16px;
+    --r-btn:22px;
+    --r-tag:13px;
+    --pill:100px;
 
-    --pad:clamp(20px,5vw,44px);
-    --sec:clamp(64px,11vw,120px);
-    --ease:cubic-bezier(.22,.61,.36,1);
-    --face:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    /* La référence fait varier sa gouttière par paliers, pas en clamp */
+    --m:5.33vw;
+    --sec:50px;
+    --ease:cubic-bezier(.215,.61,.355,1);
+    --face:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 
-    /* ---------- ÉCHELLE TYPO FLUIDE (ancrée 380px → 1280px) ---------- */
-    --t-h1:clamp(2.125rem,1.333rem + 3.33vw,4rem);       /* 34 → 64 */
-    --t-h2:clamp(1.625rem,1.203rem + 1.78vw,2.625rem);   /* 26 → 42 */
-    --t-h3:clamp(1.25rem,1.171rem + 0.33vw,1.4375rem);   /* 20 → 23 */
-    --t-body:clamp(1.0625rem,1.03rem + 0.11vw,1.125rem); /* 17 → 18 */
-    --t-lead:clamp(1.1875rem,1.135rem + 0.22vw,1.3125rem);/* 19 → 21 */
-    --t-sm:clamp(0.9375rem,0.92rem + 0.11vw,1rem);       /* 15 → 16 */
-    --t-xs:0.8125rem;                                     /* 13 */
+    /* Échelle de la référence, convertie en px : sa base rem vaut 10px,
+       donc 1.6rem = 16px, 3.2rem = 32px, 9.4rem = 94px. */
+    --t-h1:32px;
+    --t-h2:26px;
+    --t-h3:20px;
+    --t-body:16px;
+    --t-lead:20px;
+    --t-sm:16px;
+    --t-xs:10px;
   }
+
+  @media(min-width:700px){
+    :root{
+      --m:6.72vw;
+      --sec:100px;
+      --t-h1:clamp(50px,4.2vw + 10px,84px);
+      --t-h2:clamp(38px,3.125vw + 10px,64px);
+      --t-h3:clamp(18px,1.273vw + 10px,32px);
+      --t-body:18px;
+      --t-lead:clamp(22px,1.62vw + 10px,38px);
+      --t-sm:18px;
+      --t-xs:13px;
+    }
+  }
+  @media(min-width:1024px){:root{--m:3vw}}
+  @media(min-width:1281px){:root{--m:5.78vw}}
+  @media(min-width:1929px){:root{--m:calc((100vw - 1728px) / 2)}}
 
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;background:#fff;overflow-x:hidden;scroll-padding-top:92px;-webkit-text-size-adjust:100%}
@@ -53,7 +78,7 @@
   body{
     background:#fff;color:var(--ink);
     font-family:var(--face);font-size:var(--t-body);font-weight:400;
-    line-height:1.58;letter-spacing:0;
+    line-height:1.44;letter-spacing:0;
     font-variant-numeric:tabular-nums;
     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     overflow-x:hidden;
@@ -62,64 +87,68 @@
   /* ---------- TYPO ---------- */
   h1,h2,h3{font-weight:600;text-wrap:balance;overflow-wrap:break-word}
   /* le h1 remplit ses lignes : balance produisait une derniere ligne orpheline */
-  /* en mobile l'air entre les lignes prime : interligne ouvert, chasse presque
-     neutre. Le resserrement n'a de sens qu'aux grandes tailles. */
-  h1{font-size:var(--t-h1);line-height:1.22;letter-spacing:-.012em;text-wrap:pretty}
-  h2{font-size:var(--t-h2);line-height:1.24;letter-spacing:-.012em}
-  h3{font-size:var(--t-h3);line-height:1.34;letter-spacing:-.006em}
-  @media(min-width:760px){
-    h1{line-height:1.06;letter-spacing:-.03em}
-    h2{line-height:1.1;letter-spacing:-.024em}
-    h3{line-height:1.28;letter-spacing:-.012em}
+  /* La référence ne pose AUCUN interlettrage sur ses titres et les compose en
+     graisse normale, pas en semi-gras. C'est ce qui lui donne son calme. */
+  h1,h2,h3{font-weight:400;letter-spacing:0;text-wrap:balance;overflow-wrap:break-word}
+  h1{font-size:var(--t-h1);line-height:1.34;text-wrap:pretty}
+  h2{font-size:var(--t-h2);line-height:1.32}
+  h3{font-size:var(--t-h3);line-height:1.44}
+  @media(min-width:700px){
+    h1{line-height:1.08}
+    h2{line-height:1.125}
+    h3{line-height:1.34}
   }
   p{text-wrap:pretty}
-  .lead{font-size:var(--t-lead);line-height:1.42;letter-spacing:-.008em;color:var(--ink-70);max-width:56ch}
+  .lead{font-size:var(--t-lead);line-height:1.34;color:var(--ink-70);max-width:52ch}
+  /* .caption de la référence : très petit, graisse normale, interlettré */
   .eyebrow{
     display:block;
-    font-size:var(--t-xs);font-weight:700;line-height:1.3;
-    letter-spacing:.15em;text-transform:uppercase;
+    font-size:var(--t-xs);font-weight:400;line-height:1;
+    letter-spacing:.1em;text-transform:uppercase;
   }
 
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   ul,ol{list-style:none}
 
-  .wrap{width:100%;max-width:1200px;margin-inline:auto;padding-inline:var(--pad)}
+  .wrap{width:100%;max-width:1728px;margin-inline:auto;padding-inline:var(--m)}
 
   .skip{
     position:absolute;left:-9999px;top:0;z-index:200;
     background:var(--ink);color:#fff;padding:12px 18px;border-radius:var(--r-sm);font-size:var(--t-sm);
   }
-  .skip:focus{left:var(--pad);top:12px}
+  .skip:focus{left:var(--m);top:12px}
   :focus-visible{outline:2px solid var(--coral);outline-offset:3px;border-radius:4px}
 
   /* ---------- COMMANDES (aucune ombre, aucun halo) ---------- */
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;
     background:var(--coral);color:#fff;
-    padding:16px 28px;border-radius:var(--r-btn);
-    font-size:var(--t-sm);font-weight:600;letter-spacing:-.008em;line-height:1;
-    border:1px solid transparent;
-    transition:background .25s var(--ease);
+    height:54px;padding:0 30px;border-radius:var(--r-btn);
+    font-size:15px;font-weight:400;letter-spacing:0;line-height:1;
+    border:none;
+    transition:background .3s ease-in-out;
   }
   .btn svg{flex:none;transition:transform .25s var(--ease)}
-  .btn:hover{background:var(--coral-d)}
+  .btn:hover{background:var(--ink)}
+  @media(min-width:700px){.btn{height:58px;font-size:18px}}
   .btn:hover svg{transform:translateX(3px)}
-  .btn-sm{padding:11px 18px;font-size:var(--t-xs);border-radius:12px}
+  .btn-sm{height:42px;padding:0 15px;font-size:14px;border-radius:16px}
+  @media(min-width:700px){.btn-sm{height:47px;padding:0 20px;font-size:16px}}
   .btn-block{width:100%}
   @media(min-width:640px){.btn-block{width:auto}}
 
 
   .tag{
     display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
-    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
-    color:rgba(255,255,255,.80);
-    padding:9px 15px;border-radius:var(--pill);
-    font-size:12px;font-weight:500;line-height:1.2;
-    letter-spacing:.06em;text-transform:uppercase;
+    background:transparent;border:1px solid rgba(255,255,255,.2);
+    color:#fff;
+    min-height:31px;padding:3px 10px;border-radius:var(--r-bar);
+    font-size:var(--t-xs);font-weight:400;line-height:1;
+    letter-spacing:.1em;text-transform:uppercase;
     transition:background .25s var(--ease),border-color .25s var(--ease),color .25s var(--ease);
   }
-  .tag:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.32);color:#fff}
+  .tag:hover{background:var(--coral);border-color:var(--coral);color:#fff}
 
   /* ---------- EN-TÊTE ---------- */
   .site-header{position:fixed;top:clamp(10px,1.6vw,16px);left:0;right:0;z-index:60}
@@ -175,7 +204,7 @@
 
   .megamenu{
     position:fixed;inset:0;z-index:50;
-    background:linear-gradient(155deg,#2B2266,#191249 60%,#241A55);
+    background:var(--ink);
     /* centré quand il y a la place, jamais rogné en haut quand il déborde :
        justify-content:center couperait le début du contenu défilant */
     display:flex;flex-direction:column;justify-content:flex-start;
@@ -258,15 +287,16 @@
   .hero{
     position:relative;min-height:min(94svh,880px);
     display:flex;align-items:flex-end;overflow:hidden;
-    background:linear-gradient(155deg,#2B2266,#191249 60%,#241A55);
+    background:var(--ink);
   }
   .hero-bg{position:absolute;inset:0;overflow:hidden}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.74}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.8}
   .hero::after{
     content:'';position:absolute;inset:0;pointer-events:none;
     /* la référence assombrit au noir pur, ce qui laisse la photo garder
        ses couleurs au lieu de la teinter en bleu */
-    background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.04) 32%,rgba(0,0,0,.92) 100%);
+    inset:45% 0 0;
+    background:linear-gradient(to top,#000,#000000fa 9.99%,#000000ec 19.07%,#000000d7 27.44%,#000000bd 35.26%,#0000009f 42.72%,#00000080,#00000060 57.28%,#00000042 64.74%,#00000028 72.56%,#00000013 80.93%,#00000005 90.01%,#0000);
   }
   .hero-content{
     position:relative;z-index:5;width:100%;
@@ -281,7 +311,7 @@
 
   /* ---------- SECTIONS ---------- */
   main section{padding-block:var(--sec)}
-  .sec-soft{background:var(--soft)}
+  .sec-soft{background:var(--chablis)}
   .sec-head{max-width:22ch}
   .sec-head + .lead{margin-top:16px}
 
@@ -300,7 +330,7 @@
   .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center;margin-top:clamp(30px,4vw,44px)}
   @media(max-width:900px){.duo{grid-template-columns:1fr}}
 
-  .shot{border-radius:var(--r);overflow:hidden;background:linear-gradient(140deg,#2B2266,#241A55)}
+  .shot{border-radius:var(--r);overflow:hidden;background:var(--ink)}
   .shot img{width:100%;height:100%;object-fit:cover}
   .shot-4x5{aspect-ratio:4/5}
   @media(max-width:900px){.shot-4x5{aspect-ratio:16/11}}
@@ -311,8 +341,8 @@
     .rail{
       display:flex;gap:12px;overflow-x:auto;
       scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-      margin-inline:calc(var(--pad) * -1);
-      padding:4px var(--pad) 14px;scroll-padding-left:var(--pad);scrollbar-width:none;
+      margin-inline:calc(var(--m) * -1);
+      padding:4px var(--m) 14px;scroll-padding-left:var(--m);scrollbar-width:none;
     }
     .rail::-webkit-scrollbar{display:none}
     .rail > *{flex:0 0 min(85%,400px);scroll-snap-align:center}
@@ -326,7 +356,7 @@
   .pcard{
     position:relative;border-radius:var(--r);overflow:hidden;
     min-height:480px;display:flex;align-items:flex-end;
-    background:linear-gradient(150deg,#2B2266,#241A55);
+    background:var(--ink);
   }
   @media(max-width:1000px){.pcard{min-height:420px}}
   .pcard > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8;transition:transform .7s var(--ease)}
@@ -335,7 +365,7 @@
     /* rayons concentriques : écart 6px, donc rayon intérieur = 10 - 6 */
     position:relative;z-index:3;margin:6px;padding:24px 22px;
     border-radius:5px;width:calc(100% - 12px);
-    background:rgba(30,24,80,.6);border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);
     backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   }
   .pcard-panel h3{color:#fff;margin-bottom:10px}
@@ -354,9 +384,11 @@
   .b h3{margin-bottom:8px}
   .b p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5;max-width:42ch}
   .b-3{grid-column:span 3}.b-2{grid-column:span 2}
-  .b-ink{background:linear-gradient(150deg,#6455DE,#2B2266)}
-  .b-ink h3,.b-ink .big{color:#fff}
-  .b-ink p{color:rgba(255,255,255,.84)}
+  /* la consigne « texte clair » portait sur l'orange ; sur le lavande, du
+     blanc tomberait à 1,9:1, donc l'encre est conservée ici */
+  .b-ink{background:var(--lavender)}
+  .b-ink h3,.b-ink .big{color:var(--ink)}
+  .b-ink p{color:rgba(26,18,73,.8)}
   .b-ink .big{
     font-size:clamp(2.5rem,1.9rem + 2.6vw,3.5rem);font-weight:700;
     letter-spacing:-.05em;line-height:1;margin-bottom:10px;
@@ -364,7 +396,7 @@
   .b-coral{background:var(--coral)}
   .b-coral h3{color:#fff}
   .b-coral p{color:rgba(255,255,255,.92)}
-  .b-photo{padding:0;overflow:hidden;position:relative;background:linear-gradient(150deg,#2B2266,#241A55)}
+  .b-photo{padding:0;overflow:hidden;position:relative;background:var(--ink)}
   .b-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
   .b-photo:hover img{transform:scale(1.04)}
   @media(max-width:1000px){
@@ -376,9 +408,9 @@
   }
 
   /* ---------- MANIFESTE ---------- */
-  .mani{position:relative;border-radius:var(--r);overflow:hidden;min-height:400px;display:flex;align-items:center;background:linear-gradient(140deg,#2B2266,#241A55)}
+  .mani{position:relative;border-radius:var(--r);overflow:hidden;min-height:400px;display:flex;align-items:center;background:var(--ink)}
   .mani img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
-  .mani::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,0,0,.82),rgba(25,18,73,.5))}
+  .mani::after{content:'';position:absolute;inset:0;background:linear-gradient(30deg,rgba(36,55,73,.85),rgba(36,55,73,0) 60%)}
   .mani blockquote{position:relative;z-index:4;padding:clamp(28px,6vw,68px);max-width:740px}
   .mani p{
     font-size:clamp(1.5rem,0.95rem + 2.3vw,2.75rem);/* 24 → 44 */
@@ -413,9 +445,9 @@
   .tlist p{color:var(--ink-70);font-size:var(--t-body);line-height:1.5}
 
   /* ---------- CTA ---------- */
-  .cta{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;display:flex;align-items:center;background:linear-gradient(140deg,#2B2266,#241A55)}
+  .cta{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;display:flex;align-items:center;background:var(--ink)}
   .cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-  .cta::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,0,0,.82),rgba(25,18,73,.55))}
+  .cta::after{content:'';position:absolute;inset:0;background:linear-gradient(30deg,rgba(36,55,73,.85),rgba(36,55,73,0) 60%)}
   .cta-in{position:relative;z-index:4;padding:clamp(28px,6vw,68px);max-width:660px}
   .cta-in h2{color:#fff;margin-bottom:16px;max-width:15ch}
   .cta-in p{color:rgba(255,255,255,.82);font-size:var(--t-lead);line-height:1.45;letter-spacing:-.012em;margin-bottom:30px;max-width:42ch}
@@ -427,10 +459,15 @@
   .foot .r a + a{margin-left:20px}
 
   /* ---------- RÉVÉLATION ---------- */
+  /* la référence anime en 1s sur cubic-bezier(.215,.61,.355,1), avec une
+     translation de 30px en mobile et un léger retrait d'échelle au-delà */
   [data-rv]{
-    opacity:0;transform:translate3d(0,16px,0);
-    transition:opacity .65s var(--ease),transform .65s var(--ease);
+    opacity:0;transform:translate3d(0,30px,0);
+    transition:opacity 1s var(--ease),transform 1s var(--ease);
     transition-delay:var(--d,0s);
+  }
+  @media(min-width:1024px){
+    [data-rv]{transform:translate3d(0,100px,0) scale(.96)}
   }
   [data-rv="img"]{transform:none}
   [data-rv="img"] img{transform:scale(1.05);transition:transform 1s var(--ease);transition-delay:var(--d,0s)}
@@ -452,7 +489,7 @@
 
   /* --- en-tête de page interne : pas de photo, on va droit au sujet --- */
   .page-hero{
-    position:relative;background:linear-gradient(155deg,#2B2266,#191249 60%,#241A55);
+    position:relative;background:var(--ink);
     padding-block:clamp(116px,26vw,168px) clamp(48px,8vw,80px);
   }
   .page-hero h1{color:#fff;max-width:16ch;margin-bottom:20px}
