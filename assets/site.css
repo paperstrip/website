@@ -125,6 +125,8 @@
   /* ---------- EN-TÊTE ---------- */
   .site-header{position:fixed;top:clamp(10px,1.6vw,16px);left:0;right:0;z-index:60}
   .nav-in{
+    /* le mega menu est un descendant de l'en-tête : la barre doit rester au-dessus */
+    position:relative;z-index:60;
     display:flex;align-items:center;justify-content:space-between;gap:10px;
     background:rgba(255,255,255,.09);
     backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
@@ -153,25 +155,97 @@
     width:44px;height:44px;border-radius:var(--pill);flex:none;cursor:pointer;
     border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.09);
     backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    display:none;align-items:center;justify-content:center;flex-direction:column;gap:5px;
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;
+    transition:background .25s var(--ease),border-color .25s var(--ease);
   }
   .burger span{display:block;width:16px;height:1.5px;background:#fff;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
   .burger[aria-expanded="true"] span:first-child{transform:translateY(3.25px) rotate(45deg)}
   .burger[aria-expanded="true"] span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
 
-  .m-menu{
-    margin-top:8px;padding:14px;border-radius:var(--r-bar);
-    background:rgba(23,18,63,.96);border:1px solid rgba(255,255,255,.10);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  /* ---------- MEGA MENU PLEIN ÉCRAN ---------- */
+  body.menu-open{overflow:hidden}
+  /* la barre s'efface : logo et croix flottent sur le voile */
+  body.menu-open .nav-in{background:transparent;border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+  body.menu-open .nav-right .btn,
+  body.menu-open .nav-links{opacity:0;pointer-events:none;transition:opacity .2s}
+  .burger[aria-expanded="true"]{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4)}
+
+  .megamenu{
+    position:fixed;inset:0;z-index:50;
+    background:linear-gradient(150deg,#2C2270,#17123F 52%,#3A1E52);
+    /* centré quand il y a la place, jamais rogné en haut quand il déborde :
+       justify-content:center couperait le début du contenu défilant */
+    display:flex;flex-direction:column;justify-content:flex-start;
+    overflow-y:auto;overscroll-behavior:contain;
+    padding-block:clamp(104px,24vw,148px) clamp(32px,6vw,56px);
+    opacity:0;visibility:hidden;
+    /* visibility est une propriété discrète : transitionnée, elle bascule à
+       mi-course et le menu refuse le focus pendant 175ms. On la retarde donc
+       à la fermeture, et on l'applique sans délai à l'ouverture. */
+    transition:opacity .35s var(--ease),visibility 0s linear .35s;
   }
-  .m-menu a{
-    display:block;padding:13px 10px;color:rgba(255,255,255,.88);
-    font-size:var(--t-lead);font-weight:500;letter-spacing:-.015em;
-    border-bottom:1px solid rgba(255,255,255,.09);
+  .megamenu.is-open{
+    opacity:1;visibility:visible;
+    transition:opacity .35s var(--ease),visibility 0s linear 0s;
   }
-  .m-menu a:last-child{border-bottom:0}
-  @media(min-width:961px){.m-menu{display:none}}
-  @media(max-width:960px){.nav-links{display:none}.burger{display:flex}}
+  .megamenu > .wrap{margin-block:auto}
+  .megamenu .eyebrow{color:rgba(255,255,255,.5)}
+
+  .mega-nav{display:grid;margin-top:clamp(18px,3vw,26px)}
+  .mega-nav a{
+    display:grid;grid-template-columns:auto 1fr;align-items:baseline;
+    gap:0 clamp(12px,2vw,20px);padding:clamp(15px,2.4vw,22px) 0;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .mega-nav a:last-child{border-bottom:1px solid rgba(255,255,255,.12)}
+  .mega-nav .i{
+    font-size:var(--t-xs);font-weight:700;letter-spacing:.1em;
+    color:rgba(255,255,255,.34);font-variant-numeric:tabular-nums;
+  }
+  .mega-nav .t{
+    font-size:clamp(1.75rem,1.19rem + 2.35vw,2.75rem);/* 28 → 44 */
+    line-height:1.16;letter-spacing:-.02em;font-weight:600;color:#fff;
+    transition:color .25s var(--ease);
+  }
+  .mega-nav .d{
+    grid-column:2;margin-top:7px;max-width:46ch;
+    font-size:var(--t-sm);line-height:1.45;color:rgba(255,255,255,.56);
+  }
+  .mega-nav a:hover .t,.mega-nav a:focus-visible .t{color:var(--coral)}
+  .mega-nav a[aria-current="page"] .i{color:var(--coral)}
+  .mega-nav a[aria-current="page"] .t{color:var(--coral)}
+
+  .mega-foot{
+    display:flex;flex-wrap:wrap;gap:22px clamp(28px,5vw,56px);
+    margin-top:clamp(28px,5vw,44px);
+  }
+  .mega-foot .lbl{
+    font-size:var(--t-xs);font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(255,255,255,.36);margin-bottom:7px;
+  }
+  .mega-foot a,.mega-foot span{color:rgba(255,255,255,.86);font-size:var(--t-body)}
+  .mega-foot a{border-bottom:1px solid rgba(255,255,255,.24);padding-bottom:2px;transition:color .25s var(--ease),border-color .25s var(--ease)}
+  .mega-foot a:hover{color:var(--coral);border-color:var(--coral)}
+
+  /* entrée décalée, pilotée par la classe d'ouverture */
+  .mega-anim{opacity:0;transform:translate3d(0,14px,0);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+  .megamenu.is-open .mega-anim{opacity:1;transform:none}
+  .megamenu.is-open .mega-anim:nth-child(1){transition-delay:.06s}
+  .megamenu.is-open .mega-anim:nth-child(2){transition-delay:.12s}
+  .megamenu.is-open .mega-anim:nth-child(3){transition-delay:.18s}
+  .megamenu.is-open .mega-anim:nth-child(4){transition-delay:.24s}
+  .megamenu.is-open .mega-anim:nth-child(5){transition-delay:.30s}
+  .megamenu.is-open .mega-anim:nth-child(6){transition-delay:.36s}
+  .megamenu.is-open .mega-foot{transition-delay:.42s}
+
+  @media(min-width:900px){
+    .mega-nav a{grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);align-items:center}
+    .mega-nav .d{grid-column:3;margin-top:0;text-align:left}
+  }
+  @media(max-width:960px){.nav-links{display:none}}
+  @media(prefers-reduced-motion:reduce){
+    .megamenu,.mega-anim{transition:none}
+  }
   @media(max-width:400px){
     .nav-in{padding:7px 7px 7px 16px}
     .logo{font-size:1.0625rem}
@@ -378,8 +452,7 @@
   .nav-links{gap:22px}
   .nav-links a[aria-current="page"]{color:#fff}
   .nav-links a[aria-current="page"]::after{transform:scaleX(1)}
-  .m-menu a[aria-current="page"]{color:#fff}
-  @media(max-width:1120px){.nav-links{display:none}.burger{display:flex}}
+  @media(max-width:1120px){.nav-links{display:none}}
 
   /* --- en-tête de page interne : pas de photo, on va droit au sujet --- */
   .page-hero{

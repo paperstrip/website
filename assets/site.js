@@ -43,18 +43,54 @@
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
 
-  /* menu mobile */
-  var burger = document.getElementById('burger'), menu = document.getElementById('mobileMenu');
+  /* ---------- MEGA MENU PLEIN ÉCRAN ---------- */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('megaMenu');
+  var lastFocus = null;
+
+  function focusables(){
+    return Array.prototype.filter.call(
+      menu.querySelectorAll('a[href], button:not([disabled])'),
+      function(el){ return el.offsetParent !== null || el.getClientRects().length; }
+    );
+  }
+
   function setMenu(open){
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-    menu.hidden = !open;
+    menu.classList.toggle('is-open', open);
+    menu.setAttribute('aria-hidden', String(!open));
+    document.body.classList.toggle('menu-open', open);
+    if(open){
+      lastFocus = document.activeElement;
+      /* focus au cadre suivant : tant que le style n'est pas recalculé,
+         le menu est encore visibility:hidden et refuse le focus */
+      requestAnimationFrame(function(){
+        var f = focusables();
+        if(f.length) f[0].focus();
+      });
+    } else if(lastFocus){
+      lastFocus.focus();
+      lastFocus = null;
+    }
   }
-  burger.addEventListener('click', function(){
-    setMenu(burger.getAttribute('aria-expanded') !== 'true');
-  });
+
+  function isOpen(){ return burger.getAttribute('aria-expanded') === 'true'; }
+
+  burger.addEventListener('click', function(){ setMenu(!isOpen()); });
+
+  /* un lien cliqué referme : les ancres de la même page doivent rester visibles */
   menu.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+
   document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true'){ setMenu(false); burger.focus(); }
+    if(!isOpen()) return;
+    if(e.key === 'Escape'){ setMenu(false); return; }
+    if(e.key !== 'Tab') return;
+    /* le focus reste enfermé dans le menu tant qu'il est ouvert */
+    var f = focusables();
+    if(!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
   });
 })();
