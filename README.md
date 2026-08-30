@@ -90,6 +90,35 @@ L'en-tête et le pied de page sont dupliqués dans chaque fichier. C'est
 soutenable à cette échelle ; au-delà d'une dizaine de pages, il faudra passer
 à un générateur.
 
+## Changer de nom de domaine
+
+L'URL de base apparaît à plus de cent endroits : adresses canoniques, Open
+Graph, identifiants du graphe JSON-LD, sitemap, robots.txt, llms.txt. Un `@id`
+oublié casse la consolidation d'entité sans que rien ne le signale.
+
+```
+python3 tools/set-domain.py arnaudherr.be --dry-run   # simulation
+python3 tools/set-domain.py arnaudherr.be             # migration + CNAME
+python3 tools/sitemap.py
+```
+
+Le script lit l'URL actuelle dans l'adresse canonique de l'accueil, il reste
+donc utilisable pour un changement ultérieur.
+
+Ensuite, côté GitHub : Settings, Pages, Custom domain, puis Enforce HTTPS une
+fois le certificat émis. Côté registrar : un ALIAS ou ANAME à l'apex vers
+`paperstrip.github.io`, ou les quatre enregistrements A publiés par GitHub.
+
+Deux choses à ne pas oublier après la bascule :
+
+- déclarer la nouvelle propriété dans la Search Console et y déposer le sitemap ;
+- remplacer `arnaudherr@gmail.com` par une adresse au domaine. Une adresse Gmail
+  sur un site qui vend de la rigueur technique coûte plus qu'elle ne rapporte.
+
+GitHub Pages ne permet pas de rediriger les anciennes URL en 301. Si elles ont
+été indexées, demander leur retrait depuis la Search Console de l'ancienne
+propriété.
+
 ## URL canonique
 
 L'URL du site apparaît dans chaque page (canonical, Open Graph, JSON-LD),
