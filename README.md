@@ -95,6 +95,12 @@ en dérive par `color-mix()` : gris de texte, filets, teintes de survol,
 Ne modifiez pas les variables situées sous « dérivés » : elles sont
 recalculées à partir des huit précédentes.
 
+Trois registres de texte courant, à ne pas confondre. `.lead` est une accroche
+de section. Le paragraphe nu est du corps de texte. `.mention` est une
+précision ou un renvoi posé sous une grille de cartes : plus petit, plus gris,
+et nettement détaché du bloc qui le précède, pour qu'il se lise comme une
+légende et non comme la suite du propos.
+
 ### Palettes enregistrées
 
 Les palettes complètes sont stockées dans `tools/palettes.json`, dont celle en

@@ -91,6 +91,7 @@
     --t-lead:16px;
     --t-sm:16px;
     --t-xs:10px;
+    --t-mention:14px;
   }
 
   @media(min-width:700px){
@@ -105,6 +106,7 @@
       --t-lead:clamp(18px,0.578vw + 10px,20px);
       --t-sm:18px;
       --t-xs:13px;
+      --t-mention:15px;
     }
   }
   @media(min-width:1024px){:root{--m:3vw}}
@@ -142,6 +144,13 @@
   }
   p{text-wrap:pretty}
   .lead{font-size:var(--t-lead);line-height:1.44;color:var(--ink-70);max-width:56ch}
+  /* Phrase de renvoi ou de précision posée sous une grille de cartes. Elle se
+     lit comme une mention, pas comme un paragraphe : plus petite, plus grise,
+     et franchement détachée du bloc qui la précède. */
+  .mention{
+    margin-top:clamp(28px,3.6vw,44px);max-width:64ch;
+    font-size:var(--t-mention);line-height:1.5;color:var(--ink-45);
+  }
   /* .caption de la référence : très petit, graisse normale, interlettré */
   .eyebrow{
     display:block;
