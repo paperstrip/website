@@ -381,6 +381,7 @@
     "tint2": "#FBF9FE",
     "page": "#FBF9FE",
     "light": "#FFFFFF",
-    "shade": "#232320"
+    "shade": "#232320",
+    "on_accent": "#1A1B22"
   }
 }
