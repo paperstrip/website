@@ -8,7 +8,7 @@
    Le rapport minimal exige est celui du niveau AA : 4,5 pour le texte
    courant, 3 pour le texte large (24px, ou 18,66px en gras). */
 const {chromium}=require('playwright');
-const PAGES=['','sites-web-ia/','saas-sur-mesure/','sous-traitance/','ia-maitrisee/','contact/','mentions-legales/'];
+const PAGES=['','pilotage-donnees/','sites-web-ia/','saas-sur-mesure/','sous-traitance/','ia-maitrisee/','a-propos/','contact/','mentions-legales/'];
 const BASE=process.env.BASE||'http://127.0.0.1:8099/';
 
 /* Accepte rgb(), rgba() et color(srgb x y z / a) que produit color-mix().
