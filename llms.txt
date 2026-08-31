@@ -4,7 +4,8 @@
 > déjà : ERP, CRM, boutique en ligne. Je construis aussi des sites web et des
 > logiciels métier sur mesure, produits avec l'IA puis repris à la main.
 
-Basé en Belgique, j'interviens en Wallonie et à Bruxelles, en français.
+Basé en Belgique, j'interviens en Belgique et en France, en français. À
+distance partout, sur place en Wallonie et à Bruxelles.
 Dix ans passés à connecter des systèmes qui n'avaient pas prévu de se parler.
 
 Ce qui me distingue : l'IA produit vite, et produit donc vite du médiocre quand
@@ -19,7 +20,7 @@ faut décider, vérifier et couper.
 - [Logiciels métier sur mesure](https://paperstrip.github.io/website/saas-sur-mesure/) : applications internes construites en semaines, avec les cas limites traités et des tests là où une erreur coûte de l'argent. Hébergement possible sur mes serveurs en Belgique.
 - [Sous-traitance technique pour agences](https://paperstrip.github.io/website/sous-traitance/) : renfort en marque blanche pour agences web, studios et sociétés de services. Intégration IA, ponts entre systèmes, reprise de code, chiffrage avant remise d'offre. Aucun contact avec le client final, clause de non-sollicitation acceptée.
 - [SEO, GEO et contenu généré par IA](https://paperstrip.github.io/website/ia-maitrisee/) : pourquoi un livrable généré se reconnaît, comment on enlève cette signature, et ce que le référencement naturel et les moteurs génératifs demandent réellement.
-- [Qui je suis](https://paperstrip.github.io/website/a-propos/) : Arnaud Herr, dix ans à connecter des systèmes métier en Belgique. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : PME de Wallonie et de Bruxelles, agences en marque blanche, Wecocoon pour la plateforme de pilotage, et les intégrateurs déjà en place chez le client.
+- [Qui je suis](https://paperstrip.github.io/website/a-propos/) : Arnaud Herr, dix ans à connecter des systèmes métier en Belgique. Parcours, façon de travailler, ce que je refuse, et avec qui je travaille : PME belges et françaises, agences en marque blanche, Wecocoon pour la plateforme de pilotage, et les intégrateurs déjà en place chez le client.
 - [Contact](https://paperstrip.github.io/website/contact/) : arnaudherr@gmail.com, +32 477 67 29 28. Réponse sous deux jours ouvrables, puis trente minutes d'échange sans engagement. Sont gratuits : la réponse écrite, l'appel et la proposition chiffrée. Tout ce qui commence ensuite est facturé, y compris le cadrage sur place, et chaque montant est annoncé avant que l'étape commence.
 
 ## Cadre
@@ -42,7 +43,6 @@ faut décider, vérifier et couper.
 ## Cadre sur les données
 
 Anonymisation des données personnelles avant traitement. Hébergement applicatif
-sur mes serveurs en Belgique quand le projet en demande un. Choix du fournisseur
-de modèle d'IA décidé avec le client, avant de commencer. Validation humaine
+sur mes serveurs en Belgique quand le projet en demande un. Validation humaine
 partout où la décision engage l'entreprise vis-à-vis d'un client. Traçabilité de
 bout en bout. Exigences RGPD prises comme point de départ.
