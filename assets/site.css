@@ -647,7 +647,7 @@
   .band .btn:hover{background:var(--brand-page);color:var(--ink)}
 
   /* --- cartes d'offre (accueil) --- */
-  .offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(30px,4vw,44px)}
+  .offers{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:clamp(30px,4vw,44px)}
   @media(max-width:900px){.offers{grid-template-columns:1fr}}
   .offer{
     display:flex;flex-direction:column;background:var(--brand-page);border:1px solid var(--line);
