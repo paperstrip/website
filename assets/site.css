@@ -267,9 +267,12 @@
   /* Le produit n'est pas une prestation : il sort de la liste numérotée et
      porte sa propre couleur, celle de la plateforme. */
   .mega-apart{margin-top:clamp(22px,3vw,32px)}
-  .mega-apart .lbl{
-    display:block;font-size:var(--t-xs);font-weight:400;line-height:1;
-    letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-40);
+  /* Intertitre commun aux trois niveaux du menu. C'est lui qui rend la
+     profondeur du site lisible : les offres, le produit, puis les pages
+     d'appui. Même graisse et même interlettrage que le pied du menu. */
+  .mega-nav > .lbl,.mega-apart .lbl,.mega-plus > .lbl{
+    display:block;font-size:var(--t-xs);font-weight:700;line-height:1;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--on-dark-40);
     margin-bottom:12px;
   }
   .mega-apart a{
@@ -308,6 +311,26 @@
   .mega-nav a[aria-current="page"] .i{color:var(--coral)}
   .mega-nav a[aria-current="page"] .t{color:var(--coral)}
 
+  /* Second niveau : pages d'appui. Ni numérotées ni décrites, deux tiers
+     plus petites que les offres, posées en rangée. La hiérarchie se lit
+     avant même d'avoir lu les intitulés. */
+  .mega-plus{
+    display:flex;flex-wrap:wrap;align-items:baseline;
+    gap:2px clamp(22px,3.6vw,40px);
+    margin-top:clamp(24px,3.4vw,34px);
+    padding-top:clamp(15px,2.2vw,20px);
+    border-top:1px solid var(--on-dark-12);
+  }
+  .mega-plus > .lbl{flex-basis:100%;margin-bottom:13px}
+  .mega-plus a{padding:5px 0}
+  .mega-plus .t{
+    font-size:clamp(1.0625rem,.92rem + .55vw,1.375rem);/* 17 → 22 */
+    line-height:1.3;letter-spacing:-.01em;font-weight:600;color:var(--on-dark-80);
+    transition:color .25s var(--ease);
+  }
+  .mega-plus a:hover .t,.mega-plus a:focus-visible .t{color:var(--coral)}
+  .mega-plus a[aria-current="page"] .t{color:var(--coral)}
+
   .mega-foot{
     display:flex;flex-wrap:wrap;gap:22px clamp(28px,5vw,56px);
     margin-top:clamp(28px,5vw,44px);
@@ -323,13 +346,15 @@
   /* entrée décalée, pilotée par la classe d'ouverture */
   .mega-anim{opacity:0;transform:translate3d(0,14px,0);transition:opacity .5s var(--ease),transform .5s var(--ease)}
   .megamenu.is-open .mega-anim{opacity:1;transform:none}
-  .megamenu.is-open .mega-anim:nth-child(1){transition-delay:.06s}
-  .megamenu.is-open .mega-anim:nth-child(2){transition-delay:.12s}
-  .megamenu.is-open .mega-anim:nth-child(3){transition-delay:.18s}
-  .megamenu.is-open .mega-anim:nth-child(4){transition-delay:.24s}
-  .megamenu.is-open .mega-anim:nth-child(5){transition-delay:.30s}
-  .megamenu.is-open .mega-anim:nth-child(6){transition-delay:.36s}
-  .megamenu.is-open .mega-foot{transition-delay:.42s}
+  .megamenu.is-open .mega-nav a:nth-of-type(1){transition-delay:.06s}
+  .megamenu.is-open .mega-nav a:nth-of-type(2){transition-delay:.12s}
+  .megamenu.is-open .mega-nav a:nth-of-type(3){transition-delay:.18s}
+  .megamenu.is-open .mega-nav a:nth-of-type(4){transition-delay:.24s}
+  .megamenu.is-open .mega-apart a{transition-delay:.30s}
+  .megamenu.is-open .mega-plus a:nth-of-type(1){transition-delay:.36s}
+  .megamenu.is-open .mega-plus a:nth-of-type(2){transition-delay:.40s}
+  .megamenu.is-open .mega-plus a:nth-of-type(3){transition-delay:.44s}
+  .megamenu.is-open .mega-foot{transition-delay:.50s}
 
   @media(min-width:900px){
     .mega-nav a{grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);align-items:center}
