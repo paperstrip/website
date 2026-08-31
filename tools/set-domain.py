@@ -27,10 +27,20 @@ Search Console de l'ancienne propriete permet de demander leur retrait.
 """
 import io, os, re, sys
 
-CIBLES = ["index.html", "sites-web-ia/index.html", "saas-sur-mesure/index.html",
-          "ia-maitrisee/index.html", "sous-traitance/index.html",
-          "contact/index.html", "mentions-legales/index.html",
-          "sitemap.xml", "robots.txt", "llms.txt", "README.md", "tools/sitemap.py"]
+def cibles():
+    """Tous les fichiers texte du site, decouverts et non listes a la main.
+
+    Une liste en dur oublie les pages ajoutees apres coup : /a-propos/ et
+    /pilotage-donnees/ y ont manque pendant des semaines, et un @id oublie
+    casse la consolidation d'entite sans que rien ne le signale.
+    """
+    trouves = []
+    for racine, dossiers, fichiers in os.walk("."):
+        dossiers[:] = [d for d in dossiers if d not in (".git", "assets")]
+        for f in fichiers:
+            if f.endswith((".html", ".xml", ".txt", ".md", ".py")):
+                trouves.append(os.path.relpath(os.path.join(racine, f), "."))
+    return sorted(trouves)
 
 
 def base_actuelle():
@@ -65,7 +75,7 @@ def main():
     print("vers:", nouveau, "\n")
 
     total = 0
-    for f in CIBLES:
+    for f in cibles():
         if not os.path.exists(f):
             print("  absent, ignore :", f)
             continue
