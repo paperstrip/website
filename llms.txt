@@ -37,7 +37,6 @@ faut décider, vérifier et couper.
 - Lancer une automatisation sans avoir chiffré au préalable le temps réellement passé sur le geste. Sans point de départ, personne ne peut dire si ça a servi.
 - Faire passer un logiciel sur mesure quand un produit du marché fait le travail pour moins cher.
 - Promettre un rang en GEO : les moteurs génératifs ne publient pas de position, on peut réunir les conditions d'être cité, pas garantir la citation.
-- Laisser croire que je suis prestataire labellisé Chèques Entreprise : je ne le suis pas. Si votre budget en dépend, je vous oriente vers quelqu'un d'agréé.
 
 ## Cadre sur les données
 
