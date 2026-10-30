@@ -40,7 +40,12 @@ faut décider, vérifier et couper.
 
 ## Cadre sur les données
 
-Anonymisation des données personnelles avant traitement. Hébergement applicatif
-sur mes serveurs en Belgique quand le projet en demande un. Validation humaine
-partout où la décision engage l'entreprise vis-à-vis d'un client. Traçabilité de
-bout en bout. Exigences RGPD prises comme point de départ.
+Les modèles d'IA sont appelés par une plateforme européenne soumise au RGPD,
+encadrée par un contrat de sous-traitance des données. L'apprentissage à partir
+des données clients y est bloqué : rien de ce qui est envoyé au modèle ne sert à
+l'entraîner. Anonymisation des données personnelles avant traitement. Hébergement
+applicatif sur mes serveurs en Belgique quand le projet en demande un. Chaque cas
+d'usage est classé selon le règlement européen sur l'IA (AI Act) dès le cadrage :
+transparence envers les personnes qui lisent un contenu généré, validation humaine
+partout où la décision engage l'entreprise vis-à-vis d'un client, traçabilité de
+bout en bout.
